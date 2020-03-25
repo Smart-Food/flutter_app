@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/products/CCList.dart';
+import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/services/auth.dart';
 import 'package:provider/provider.dart';
 
@@ -11,9 +11,8 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   Map<String, WidgetBuilder> staticRoutes = {
-    '/': (context) => MyHomePage(title: 'SmartFood'),
+    '/': (context) => MyHomePage(title: 'SmartFood'), // Главная страница приложения
   };
-
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
     return StreamProvider<User>.value(
         value: AuthService().currentUser,
         child: MaterialApp(
-          debugShowCheckedModeBanner: false,
+          debugShowCheckedModeBanner: false, //Убрана надпись Debug
           title: 'SmartFood',
           theme: ThemeData(
               primaryColor: Color.fromRGBO(50, 65, 85, 1),
@@ -41,7 +40,6 @@ class MyHomePage extends StatelessWidget {
 
   final String title;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,31 +48,36 @@ class MyHomePage extends StatelessWidget {
         title: Text(title),
         actions: <Widget>[
           FlatButton.icon(onPressed: (){
-            AuthService().logOut();
+            AuthService().logOut(); //  выход из аккаунта
           },
-              icon: Icon(Icons.supervised_user_circle),
-              label: SizedBox.shrink())
+              icon: Icon(Icons.supervised_user_circle), // иконка выхода
+              label: SizedBox.shrink() // shrink делает объект незаметным,
+                                          // применяется там где не используются обязательные параметры
+          )
         ],
       ),
-      body: Container(
-        child: Row(
+      body: Container( // контейнер, в котором содержатся кнопки
+        child: Row( // строка, которая объединяет кнопки в один объект
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RaisedButton(
-              child: Image.network('https://im0-tub-ru.yandex.net/i?id=81d989f22df4cd58bdea6bd59c4ce2d1&n=13&exp=1', width: 70, height: 50),
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => CCList())),
+              child: Image.network('https://clck.ru/Mf43i', width: 70, height: 50), // url картинки, ширина и высота
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
+                  builder: (context) => Products() // context - текущее окружение, CCList - страница с продуктами
+              )),
             ),
             RaisedButton(
               //child: Text('Регистрация'),
-              child: Image.network('https://im0-tub-ru.yandex.net/i?id=c4d28986a4cc08245787991e0cce8b02&n=13&exp=1', width: 70, height: 50),
+              child: Image.network('https://clck.ru/Mf49G', width: 70, height: 50),
               onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Login())),
+                  MaterialPageRoute(builder: (context) => Login() // страница регистрации/входа
+                  )),
             ),
             RaisedButton(
-              child: Image.network('https://im0-tub-ru.yandex.net/i?id=51a93fe94f96a8b88001a1523577d1a1&n=13&exp=1', width: 70, height: 50),
+              child: Image.network('https://clck.ru/Mf49x', width: 70, height: 50),
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => SmartMaps())),
+                  builder: (context) => SmartMaps()  // карты
+              )),
             ),
           ],
         ),
@@ -82,16 +85,3 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
-
-//Padding(
-//padding: EdgeInsets.only(top: 35),
-//child: Container(
-//child: Align(
-//child: Text('', style: TextStyle(
-//fontWeight: FontWeight.bold,
-//fontSize: 45,
-//color: Colors.white
-//)),
-//),
-//),
-//),

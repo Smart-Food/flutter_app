@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
-import 'CCData.dart';
+import 'product.dart';
 import 'data.dart';
-//import 'package:http/http.dart' as http;
-//import 'dart:convert';
-class CCList extends StatelessWidget {
-//  @override
-//  State<StatefulWidget> createState() {
-//    return CCListState();
-//  }
-//}
-//
-//class CCListState extends State<CCList> {
-//  //List<CCData> data = [];
+class Products extends StatefulWidget {
+  @override
+  _ProductsState createState() => _ProductsState();
+}
+
+class _ProductsState extends State<Products> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,12 +18,36 @@ class CCList extends StatelessWidget {
             children: _buildList(),
           )
       ),
-//      floatingActionButton: FloatingActionButton(
+    );
+  }
+
+  List<Widget> _buildList() {
+    return data.map((Product f) =>
+        ListTile(
+          title: Text(f.name),
+          subtitle: Text(f.brand),
+          leading: CircleAvatar(child: Text(f.value.toString())),
+          trailing: Text('${f.price}P'),
+        )).toList();
+  }
+}
+
+
+
+//import 'package:http/http.dart' as http;
+//import 'dart:convert';
+//  @override
+//  State<StatefulWidget> createState() {
+//    return CCListState();
+//  }
+//}
+//
+//class CCListState extends State<CCList> {
+//  //List<CCData> data = [];
+//floatingActionButton: FloatingActionButton(
 //        child: Icon(Icons.refresh),
 //        onPressed: () => _loadCC(),
 //      ),
-    );
-  }
 //  _loadCC() async {
 //    //final response = await http.get('https://world.openfoodfacts.org/api/v0/product/04963406');
 //      //final response = jsonDecode('data.json');
@@ -49,13 +68,3 @@ class CCList extends StatelessWidget {
 //        });
 //      //}
 //    }
-  List<Widget> _buildList() {
-    return data.map((CCData f) =>
-        ListTile(
-          title: Text(f.name),
-          subtitle: Text(f.brand),
-          leading: CircleAvatar(child: Text(f.value.toString())),
-          trailing: Text('${f.price}P'),
-        )).toList();
-  }
-}

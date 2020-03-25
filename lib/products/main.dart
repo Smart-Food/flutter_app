@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'CCList.dart';
+import 'productList.dart';
 
 class CCTracker extends StatelessWidget {
 
@@ -12,7 +12,7 @@ class CCTracker extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CCList(),
+      home: Products(),
     );
   }
 }
