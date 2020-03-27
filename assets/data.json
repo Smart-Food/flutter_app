@@ -1,29 +1,34 @@
 [
   {
+    "id": 1,
     "name": "Product",
     "picture": "https://clck.ru/MgRPE",
     "old_price": 120.0,
     "price": 85.0
   },
   {
+    "id": 2,
     "name": "Product2",
     "picture": "https://clck.ru/MgRPE",
     "old_price": 55.0,
     "price": 85.0
   },
   {
+    "id": 3,
     "name": "Product3",
     "picture": "https://clck.ru/MgRPE",
     "old_price": 55.0,
     "price": 85.0
   },
   {
+    "id": 4,
     "name": "Product4",
     "picture": "https://clck.ru/MgRPE",
     "old_price": 55.0,
     "price": 85.0
   },
   {
+    "id": 5,
     "name": "Product5",
     "picture": "https://clck.ru/MgRPE",
     "old_price": 55.0,
