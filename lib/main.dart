@@ -4,7 +4,7 @@ import 'package:flutterapp/services/auth.dart';
 import 'package:provider/provider.dart';
 
 import 'domain/user.dart';
-import 'login.dart';
+import 'login/login.dart';
 import 'maps.dart';
 
 void main() => runApp(MyApp());
