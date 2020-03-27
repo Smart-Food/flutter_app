@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'product.dart';
 import 'dart:convert';
-import 'data.dart';
 class Products extends StatefulWidget {
   @override
   _ProductsState createState() => _ProductsState();
@@ -19,7 +18,7 @@ class _ProductsState extends State<Products> {
         ),
         body: new Center (
             child: FutureBuilder(builder: (context, snapshot){
-              var showData=json.decode(snapshot.data.toString());
+              var productList=json.decode(snapshot.data.toString());
               return GridView.builder(
                 itemCount: productList.length,
                 gridDelegate:
