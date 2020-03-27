@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/products/CCList.dart';
+import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/services/auth.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutterapp/products/productList.dart';
+import 'package:flutterapp/products/productInfo.dart';
 import 'domain/user.dart';
 import 'login.dart';
 import 'maps.dart';
@@ -29,7 +30,21 @@ class MyApp extends StatelessWidget {
               textTheme: TextTheme(title: TextStyle(color:  Colors.white))
           ),
           initialRoute: '/',
-          routes: routes,
+            routes: {
+              '/':(BuildContext context) => MyHomePage(),
+              '/CCList':(BuildContext context) => CCList(),
+              '/InfoAboutProduct':(BuildContext context) => InfoAboutProduct(),
+            },
+            // ignore: missing_return
+            onGenerateRoute: (routeSettings) {
+              var path = routeSettings.name.split('/');
+              if (path[1] == 'InfoAboutProduct') {
+                return MaterialPageRoute(
+                  builder: (context) => InfoAboutProduct(id:path[2]),
+                  settings: routeSettings,
+                );
+              }
+            },
         )
     );
   }
@@ -47,7 +62,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title !=null? title:'SmartFood'),
         actions: <Widget>[
           FlatButton.icon(onPressed: (){
             AuthService().logOut();
