@@ -16,4 +16,3 @@ class CCTracker extends StatelessWidget {
 }
 
 void main() => runApp(CCTracker());
-
