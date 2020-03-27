@@ -6,13 +6,14 @@ class Product extends StatelessWidget{
   double price ,
       value,
       oldPrice;
-  Product({this.name, this.brand, this.price, this.value, this.picture, this.oldPrice});
+  int id;
+  Product({this.name, this.brand, this.price, this.value, this.picture, this.oldPrice, this.id});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Hero(
-          tag: name,
+          tag: id,
           child: Material(
             child: InkWell(
               onTap: () {},
