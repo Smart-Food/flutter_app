@@ -8,7 +8,6 @@ class Products extends StatefulWidget {
 
 //var productList = jsonDecode('data.json');
 
-
 class _ProductsState extends State<Products> {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +19,6 @@ class _ProductsState extends State<Products> {
             child: FutureBuilder(builder: (context, snapshot){
               var productList=json.decode(snapshot.data.toString());
               return GridView.builder(
-                itemCount: productList.length,
                 gridDelegate:
                 new SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
@@ -33,9 +31,9 @@ class _ProductsState extends State<Products> {
                     price: productList[index]["price"],
                   );
                 },
+                itemCount: productList.length,
               );
             }, future: DefaultAssetBundle.of(context).loadString("assets/data.json"),
-
             ),
         ),
         );
