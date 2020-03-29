@@ -4,8 +4,8 @@ import 'productList.dart';
 class CCTracker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return MaterialApp( // приложение, использующее material design
+      debugShowCheckedModeBanner: false,  // стандарт от Google
       title: 'SmartFood',
       theme: ThemeData(
         primarySwatch: Colors.blue,
