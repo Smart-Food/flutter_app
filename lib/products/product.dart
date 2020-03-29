@@ -1,37 +1,52 @@
 import 'package:flutter/material.dart';
-class Product extends StatelessWidget{
+import 'package:flutterapp/products/productInfo.dart';
+class Product extends StatefulWidget {
   String name,
       brand,
       picture;
-  double price ,
+  double price,
       value,
       oldPrice;
   int id;
-  Product({this.name, this.brand, this.price, this.value, this.picture, this.oldPrice, this.id});
+  Product({
+    this.name, this.brand, this.price, this.value,
+    this.picture, this.oldPrice, this.id
+      });
 
+  @override
+  ProductState createState() => ProductState();
+}
+
+  class ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Hero(
-          tag: id,
+          tag: widget.id,
           child: Material(
             child: InkWell(
-              onTap: () {},
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ProductInfo(
+                  name: widget.name, id:widget.id, picture: widget.picture,
+                  value: widget.value, brand: widget.brand,
+                  oldPrice: widget.oldPrice, price: widget.price,
+                )
+              )),
               child: GridTile(
                   footer: Container(
                     color: Colors.white70,
                     child: ListTile(
                       leading: Text(
-                        name,
+                        widget.name,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       title: Text(
-                        "\$$price",
+                        '$widget.price' + 'р',
                         style: TextStyle(
                             color: Colors.red, fontWeight: FontWeight.w800),
                       ),
                       subtitle: Text(
-                        "\$$oldPrice",
+                        '$widget.oldPrice' + 'р',
                         style: TextStyle(
                             color: Colors.black54,
                             fontWeight: FontWeight.w800,
@@ -39,7 +54,7 @@ class Product extends StatelessWidget{
                       ),
                     ),
                   ),
-                  child: Image.network(picture,
+                  child: Image.network(widget.picture,
                     fit: BoxFit.cover,
                   )),
             ),

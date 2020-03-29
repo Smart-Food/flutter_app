@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "name": "Product",
-    "picture": "https://clck.ru/MgRPE",
-    "oldPrice": 120.0,
-    "price": 85.0
+    "name": "Молоко",
+    "picture": "https://clck.ru/Mhkk7",
+    "oldPrice": 85.0,
+    "price": 50.0
   },
   {
     "id": 2,
-    "name": "Product2",
-    "picture": "https://clck.ru/MgRPE",
+    "name": "Колбаса",
+    "picture": "https://clck.ru/MhksL",
     "oldPrice": 55.0,
     "price": 85.0
   },
