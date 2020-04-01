@@ -12,7 +12,7 @@ class _ProductsState extends State<Products> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( // отображение страницы
-        appBar: AppBar( панель виджетов на странице
+        appBar: AppBar( // панель виджетов на странице
           title: Text('Продукты'), // заголовок
         ),
         body: new Center (
