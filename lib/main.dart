@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/services/auth.dart';
+import 'package:flutterapp/services/payment.dart';
 import 'package:provider/provider.dart';
 
 import 'domain/user.dart';
@@ -32,7 +33,6 @@ class MyApp extends StatelessWidget {
         )
     );
   }
-
 }
 
 class MyHomePage extends StatelessWidget {
@@ -76,7 +76,13 @@ class MyHomePage extends StatelessWidget {
             RaisedButton(
               child: Image.network('https://clck.ru/Mf49x', width: 70, height: 50),
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => SmartMaps()  // карты
+                  builder: (context) => MapsHomePage()  // карты
+              )),
+            ),
+            RaisedButton(
+              child: Image.network('https://clck.ru/Mnfw6', width: 70, height: 50),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Payment()  // оплата
               )),
             ),
           ],

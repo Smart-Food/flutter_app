@@ -4,25 +4,12 @@ import 'package:latlong/latlong.dart';
 
 import 'main.dart';
 
-class SmartMaps extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            primaryColor: Color.fromRGBO(50, 65, 85, 1)
-        ),
-      home: new MapsHomePage(),
-    );
-  }
-}
-
-class MapsHomePage extends StatefulWidget {
+class SmartMaps extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MapsHomePage> {
+class _MyHomePageState extends State<SmartMaps> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
