@@ -4,12 +4,12 @@ import 'package:latlong/latlong.dart';
 
 import 'main.dart';
 
-class MapsHomePage extends StatefulWidget {
+class SmartMaps extends StatefulWidget {
   @override
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MapsHomePage> {
+class _MyHomePageState extends State<SmartMaps> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
