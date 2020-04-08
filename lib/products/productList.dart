@@ -40,7 +40,6 @@ class _ProductsState extends State<Products> {
             }, future: DefaultAssetBundle.of(context).loadString("assets/data.json"), // загрузка
             ),                                                             // данных из JSON-файла
         ),
-
         );
   }
 }

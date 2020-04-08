@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/services/auth.dart';
+import 'package:flutterapp/services/payment.dart';
 import 'package:provider/provider.dart';
 
 import 'domain/user.dart';
@@ -32,7 +33,6 @@ class MyApp extends StatelessWidget {
         )
     );
   }
-
 }
 
 class MyHomePage extends StatelessWidget {
@@ -41,7 +41,8 @@ class MyHomePage extends StatelessWidget {
   final String title;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { // получение ширины экрана
+    final double iconSize = MediaQuery.of(context).size.width * 0.172;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
@@ -56,32 +57,52 @@ class MyHomePage extends StatelessWidget {
           )
         ],
       ),
-      body: Container( // контейнер, в котором содержатся кнопки
-        child: Row( // строка, которая объединяет кнопки в один объект
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Row( // строка, которая объединяет кнопки в один объект
           children: <Widget>[
             RaisedButton(
-              child: Image.network('https://clck.ru/Mf43i', width: 70, height: 50), // url картинки, ширина и высота
+              child: Icon(
+                Icons.fastfood,
+                color: Colors.white,
+                  size: iconSize),
+              color: Color.fromRGBO(50, 65, 85, 1),// url картинки, ширина и высота
               onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
                   builder: (context) => Products() // context - текущее окружение, CCList - страница с продуктами
               )),
             ),
             RaisedButton(
-              //child: Text('Регистрация'),
-              child: Image.network('https://clck.ru/Mf49G', width: 70, height: 50),
-              onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Login() // страница регистрации/входа
-                  )),
-            ),
-            RaisedButton(
-              child: Image.network('https://clck.ru/Mf49x', width: 70, height: 50),
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => SmartMaps()  // карты
+              child: Icon(
+                  Icons.assignment_ind,
+                  color: Colors.white,
+                  size: iconSize),
+              color: Color.fromRGBO(50, 65, 85, 1),// url картинки, ширина и высота
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
+                  builder: (context) => Login() // context - текущее окружение, CCList - страница с продуктами
               )),
             ),
+            RaisedButton(
+              child: Icon(
+                  Icons.map,
+                  color: Colors.white,
+                  size: iconSize),
+              color: Color.fromRGBO(50, 65, 85, 1),// url картинки, ширина и высота
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
+                  builder: (context) => SmartMaps() // context - текущее окружение, CCList - страница с продуктами
+              )),
+            ),
+            //Padding(padding: new EdgeInsets.only(left: indentSize)),
+            RaisedButton(
+              child: Icon(
+                  Icons.payment,
+                  color: Colors.white,
+                  size: iconSize),
+              color: Color.fromRGBO(50, 65, 85, 1),// url картинки, ширина и высота
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
+                  builder: (context) => Payment() // context - текущее окружение, CCList - страница с продуктами
+              )),
+            ),
+          //payment
           ],
         ),
-      ),
-    );
+      );
   }
 }
