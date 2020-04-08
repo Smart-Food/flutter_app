@@ -3,10 +3,10 @@ import 'package:flutterapp/products/product.dart';
 import 'package:flutterapp/products/productInfo.dart';
 import 'package:provider/provider.dart';
 import 'package:flutterapp/registration/cart.dart';
-//import 'dart:convert';
 
 
-class ShoppingCart extends StatelessWidget{
+
+/*class ShoppingCart extends StatelessWidget{
   ShoppingCart({Key key}):super(key:key);
 
   Widget build(BuildContext context) {
@@ -53,5 +53,60 @@ class ShoppingCart extends StatelessWidget{
     );
   }
 
-}
+}*/
+class ShoppingCart extends StatelessWidget {
 
+  final cart;
+  final double sum;
+  ShoppingCart(this.cart, this.sum);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar:AppBar(
+          title: Text('Корзина'),
+        ),
+        body: ListView(
+      //crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        ListView.separated(
+          itemBuilder: (context, index){
+            return ListTile(
+              title: Text(cart[index].name),
+              subtitle: Text(cart[index].num.toString()),
+              /*trailing: Text("\$${cart[index].price*cart[index].num}",
+                style: TextStyle(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.w500),),*/
+              trailing: IconButton(
+                icon: Icon(
+                  Icons.delete ,
+                  color: Colors.red,
+                ),
+                onPressed:() {
+                  cart.removeAt(index);
+
+                  },
+              ),
+            );
+          },
+          separatorBuilder: (context, index){
+            return Divider();
+          },
+          itemCount: cart.length,
+          shrinkWrap: true,
+        ),
+        Divider(),
+        Text("Total : \$$sum"),
+        RaisedButton(
+          splashColor: Theme.of(context).primaryColor,
+          highlightColor: Theme.of(context).primaryColor,
+          color: Colors.white,
+          child: Text('Оплатить'),
+          //style : TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20),
+          onPressed: () {
+
+            },
+        )
+      ],
+    )
+    );
+  }
+}
