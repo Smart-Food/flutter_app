@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/productInfo.dart';
+
 class Product extends StatefulWidget {
   String name,
       brand,
@@ -41,12 +42,12 @@ class Product extends StatefulWidget {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       title: Text(
-                        '$widget.price' + 'р',
+                        widget.price.toString() + 'р',
                         style: TextStyle(
                             color: Colors.red, fontWeight: FontWeight.w800),
                       ),
                       subtitle: Text(
-                        '$widget.oldPrice' + 'р',
+                        widget.oldPrice.toString() + 'р',
                         style: TextStyle(
                             color: Colors.black54,
                             fontWeight: FontWeight.w800,
