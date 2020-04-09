@@ -66,8 +66,7 @@ class MyHomePage extends StatelessWidget {
         child: RaisedButton(
               child: Icon(
                 Icons.fastfood,
-                color: Colors.white)
-          ,
+                color: Colors.white),
               color: Theme.of(context).primaryColor,
               onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
                   builder: (context) => Products() // context - текущее окружение, Products - страница с продуктами
