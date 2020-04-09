@@ -55,6 +55,3 @@ class _MapState extends State<Maps> {
     });
   }
 }
-
-
-
