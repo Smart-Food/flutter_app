@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/productList.dart';
+import 'package:flutterapp/registration/shoppingCart.dart';
 import 'package:flutterapp/services/auth.dart';
 import 'package:flutterapp/services/payment.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +43,8 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) { // получение ширины экрана
-    final double iconSize = MediaQuery.of(context).size.width * 0.172;
+    final double iconSize = MediaQuery.of(context).size.width * 0.2;
+    //final double indentSize = MediaQuery.of(context).size.width * 0.045;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
@@ -53,54 +55,72 @@ class MyHomePage extends StatelessWidget {
           },
               icon: Icon(Icons.supervised_user_circle), // иконка выхода
               label: SizedBox.shrink() // shrink делает объект незаметным,
-                                          // применяется там где не используются обязательные параметры
+            // применяется там где не используются обязательные параметры
           )
         ],
       ),
       body: Row( // строка, которая объединяет кнопки в один объект
           children: <Widget>[
-            RaisedButton(
+      Container(
+        width: iconSize,
+        child: RaisedButton(
               child: Icon(
                 Icons.fastfood,
-                color: Colors.white,
-                  size: iconSize),
-              color: Color.fromRGBO(50, 65, 85, 1),// url картинки, ширина и высота
+                color: Colors.white)
+          ,
+              color: Theme.of(context).primaryColor,
               onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
-                  builder: (context) => Products() // context - текущее окружение, CCList - страница с продуктами
+                  builder: (context) => Products() // context - текущее окружение, Products - страница с продуктами
               )),
-            ),
-            RaisedButton(
+            ),),
+      Container(
+        width: iconSize,
+           child: RaisedButton(
               child: Icon(
                   Icons.assignment_ind,
-                  color: Colors.white,
-                  size: iconSize),
-              color: Color.fromRGBO(50, 65, 85, 1),// url картинки, ширина и высота
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
-                  builder: (context) => Login() // context - текущее окружение, CCList - страница с продуктами
+                  color: Colors.white
+              ),
+              color: Color.fromRGBO(50, 65, 85, 1),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Login()
               )),
-            ),
-            RaisedButton(
+            ),),
+      Container(
+        width: iconSize,
+        child: RaisedButton(
               child: Icon(
                   Icons.map,
-                  color: Colors.white,
-                  size: iconSize),
-              color: Color.fromRGBO(50, 65, 85, 1),// url картинки, ширина и высота
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
-                  builder: (context) => SmartMaps() // context - текущее окружение, CCList - страница с продуктами
+                  color: Colors.white
+              ),
+              color: Color.fromRGBO(50, 65, 85, 1),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => SmartMaps()
               )),
-            ),
-            //Padding(padding: new EdgeInsets.only(left: indentSize)),
-            RaisedButton(
+            ),),
+      Container(
+        width: iconSize,
+        child: RaisedButton(
               child: Icon(
                   Icons.payment,
-                  color: Colors.white,
-                  size: iconSize),
-              color: Color.fromRGBO(50, 65, 85, 1),// url картинки, ширина и высота
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
-                  builder: (context) => Payment() // context - текущее окружение, CCList - страница с продуктами
+                  color: Colors.white
+              ),
+              color: Color.fromRGBO(50, 65, 85, 1),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Payment()
               )),
-            ),
-          //payment
+            ),),
+      Container(
+        width: iconSize,
+        child: RaisedButton(
+              child: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.white
+              ),
+              color: Color.fromRGBO(50, 65, 85, 1),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ShoppingCart(cart, sum)
+              )),
+            ),)
           ],
         ),
       );

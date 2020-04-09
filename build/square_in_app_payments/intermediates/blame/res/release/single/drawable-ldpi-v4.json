@@ -1,0 +1,114 @@
+[
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_amex_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_amex_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_visa_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_visa_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_mastercard_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_mastercard_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_loader_circle_done.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/4fe0d17be9cb255051e029020ef25580/jetified-in-app-payments-1.3.0/res/drawable-ldpi-v4/sqip_loader_circle_done.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_visa_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_visa_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_discover_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_discover_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_master_card_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_master_card_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_visa_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_visa_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_unknown_card_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_unknown_card_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_jcb_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_jcb_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_union_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_union_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_unknown_card_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_unknown_card_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_loader_circle.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/4fe0d17be9cb255051e029020ef25580/jetified-in-app-payments-1.3.0/res/drawable-ldpi-v4/sqip_loader_circle.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_amex_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_amex_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_diners_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_diners_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_mastercard_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_mastercard_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_error_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_error_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_jcb_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_jcb_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_diners_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_diners_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_white_card_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_white_card_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_union_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_union_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_unknown_card_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_unknown_card_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_master_card_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_master_card_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_discover_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_discover_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_unknown_card_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_unknown_card_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_visa_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_visa_front.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_big_white_card_back.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_big_white_card_back.png"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/drawable-ldpi-v4/sqip_small_discover_front.png",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/drawable-ldpi-v4/sqip_small_discover_front.png"
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/sqip_exit_to_left.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/anim/sqip_exit_to_left.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_slide_out_top.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/sqip_edit_text_shake_error.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/anim/sqip_edit_text_shake_error.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_popup_enter.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/sqip_bounce_cycle_3.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/anim/sqip_bounce_cycle_3.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_tooltip_enter.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_tooltip_enter.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_slide_out_bottom.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/sqip_enter_from_right.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/anim/sqip_enter_from_right.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_popup_exit.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_fade_in.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_fade_out.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_slide_in_top.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/sqip_exit_to_right.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/anim/sqip_exit_to_right.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_tooltip_exit.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_tooltip_exit.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/sqip_enter_from_left.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/f3482cb4d11dbb58a3b959bd7b8202cf/jetified-card-entry-1.3.0/res/anim/sqip_enter_from_left.xml"
+    },
+    {
+        "merged": "/home/pavel/AndroidStudioProjects/Git/flutter_app/build/square_in_app_payments/intermediates/res/merged/release/anim/abc_slide_in_bottom.xml",
+        "source": "/home/pavel/.gradle/caches/transforms-2/files-2.1/9b806cc71296e01a86c2cbc5d704cc19/appcompat-1.0.0/res/anim/abc_slide_in_bottom.xml"
+    }
+]
