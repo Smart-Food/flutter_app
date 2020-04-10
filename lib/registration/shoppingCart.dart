@@ -23,6 +23,8 @@ class _ShoppingCart extends State<ShoppingCart> {
       //crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         ListView.separated(
+          controller: ScrollController(),
+          itemCount: cart.length,
           itemBuilder: (context, index){
             return /*Dismissible(
               key: Key(cart[index].toString()),
@@ -62,8 +64,8 @@ class _ShoppingCart extends State<ShoppingCart> {
           separatorBuilder: (context, index){
             return Divider();
           },
-          itemCount: cart.length,
           shrinkWrap: true,
+          scrollDirection: Axis.vertical,
         ),
         Divider(),
         Text("Total : \$$sum"),
@@ -71,8 +73,8 @@ class _ShoppingCart extends State<ShoppingCart> {
           splashColor: Theme.of(context).primaryColor,
           highlightColor: Theme.of(context).primaryColor,
           color: Colors.white,
-          child: Text('Оплатить'),
-          //style : TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20),
+          child: Text('Оплатить',
+              style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20)),
           onPressed: () {
 
             },
