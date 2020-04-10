@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/login/SizeConfig.dart';
-import 'package:flutterapp/services/auth.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutterapp/login/login.dart';
 
-import '../domain/user.dart';
-import '../main.dart';
-
-class LoginApp extends StatelessWidget {
+class SignupApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -18,7 +14,7 @@ class LoginApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'HomeScreen App',
-              home: Login(),
+              home: SignUp(),
             );
           },
         );
@@ -27,16 +23,17 @@ class LoginApp extends StatelessWidget {
   }
 }
 
-class Login extends StatefulWidget {
-  Login({Key key, this.title}) : super(key: key);
+class SignUp extends StatefulWidget {
+  SignUp({Key key, this.title}) : super(key: key);
+
 
   final String title;
 
   @override
-  _LoginState createState() => _LoginState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
+class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +48,10 @@ class _LoginState extends State<Login> {
               SizedBox(height: 15 * SizeConfig.heightMultiplier,),
               ClipRRect(
                 borderRadius: BorderRadius.circular(25.0),
-                child: Image.asset("assets/Apalkoff.jpg", fit: BoxFit.cover, height: 120.0, width: 120.0,),
+                child: Image.asset("assets/creatingprofile.png", fit: BoxFit.cover, height: 150.0, width: 150.0,),
               ),
               SizedBox(height: 5 * SizeConfig.heightMultiplier,),
-              Text("Илья Апальков", style: TextStyle(
+              Text("Sign Up", style: TextStyle(
                   color: Colors.blueGrey,
                   fontWeight: FontWeight.bold,
                   fontSize: 4 * SizeConfig.textMultiplier
@@ -62,7 +59,7 @@ class _LoginState extends State<Login> {
               SizedBox(height: 3 * SizeConfig.heightMultiplier,),
               Padding(
                 padding: const EdgeInsets.only(left: 50.0, right: 50.0),
-                child: Text("Это вы?",
+                child: Text("Зарегистрируйтесь используя email и пароль для приложения",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Colors.blueGrey,
@@ -74,7 +71,7 @@ class _LoginState extends State<Login> {
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   decoration: new InputDecoration(
-                      labelText: "Email..",
+                      labelText: "E-mail..",
                       fillColor: Colors.white,
                       border: new OutlineInputBorder(
                           borderRadius: new BorderRadius.circular(15.0),
@@ -91,7 +88,7 @@ class _LoginState extends State<Login> {
                       return null;
                     }
                   },
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.emailAddress,
                   style: new TextStyle(
                       color: Colors.blueGrey
                   ),
@@ -119,7 +116,7 @@ class _LoginState extends State<Login> {
                       return null;
                     }
                   },
-                  keyboardType: TextInputType.text,
+                  keyboardType: TextInputType.visiblePassword,
                   style: new TextStyle(
                       color: Colors.blueGrey
                   ),
@@ -135,7 +132,7 @@ class _LoginState extends State<Login> {
                       borderRadius: BorderRadius.circular(20.0)
                   ),
                   child: Center(
-                    child: Text("Next", style: TextStyle(
+                    child: Text("Создать аккаунт", style: TextStyle(
                         color: Colors.black87,
                         fontWeight: FontWeight.bold
                     ),),
@@ -146,22 +143,28 @@ class _LoginState extends State<Login> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Нет аккаунта?", style: TextStyle(
+                  Text("Уже есть аккаунт?", style: TextStyle(
                       color: Colors.blueGrey,
                       fontSize: 1.7 * SizeConfig.textMultiplier
                   ),),
                   SizedBox(width: 1 * SizeConfig.widthMultiplier,),
-                  Text("Зарегистрируйтесь", style: TextStyle(
-                      color: Colors.blue[600],
-                      fontSize: 1.7 * SizeConfig.textMultiplier,
-                  ),),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=> Login()));
+                    },
+                    child: Text("Войдите", style: TextStyle(
+                        color: Colors.blue[600],
+                        fontSize: 1.7 * SizeConfig.textMultiplier
+                    ),),
+                  ),
                 ],
               )
             ],
           ),
         ),
       ),
-
 
     );
   }
