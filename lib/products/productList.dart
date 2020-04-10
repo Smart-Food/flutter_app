@@ -1,70 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/products/productInfo.dart';
 import 'product.dart';
-import 'data.dart';
+import 'dart:convert';
 class Products extends StatefulWidget {
   @override
   _ProductsState createState() => _ProductsState();
 }
 
+//var productList = jsonDecode('data.json');
+List<ProductInfo> cart = [];
+double sum = 0;
 class _ProductsState extends State<Products> {
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Продукты'),
+    return Scaffold( // отображение страницы
+      appBar: AppBar( //панель виджетов на странице
+        title: Text('Продукты'), // заголовок
       ),
-      body: Container(
-          child: ListView(
-            children: _buildList(),
-          )
+      body: new Center (
+        child: FutureBuilder(builder: (context, snapshot){ // тип данных Future - работа с
+          var productList=json.decode(snapshot.data.toString()); // данными, когда они будут доступны
+          return GridView.builder(
+            gridDelegate: // контролирует расположение объектов GridView
+            new SliverGridDelegateWithFixedCrossAxisCount( // таблица расположений
+              // с фиксированным набором колонок / строк
+                crossAxisCount: 2), // два объекта по горизонтали
+            itemBuilder: (BuildContext context, int index){
+              return Product( // создание класса Product из Json-файла
+                id: productList[index]["id"],
+                name: productList[index]["name"],
+                picture: productList[index]["picture"],
+                oldPrice: productList[index]["oldPrice"],
+                price: productList[index]["price"],
+              );
+            },
+            itemCount: productList.length,  // количество продуктов
+          );
+        }, future: DefaultAssetBundle.of(context).loadString("assets/data.json"), // загрузка
+        ),                                                             // данных из JSON-файла
       ),
     );
   }
-
-  List<Widget> _buildList() {
-    return data.map((Product f) =>
-        ListTile(
-          title: Text(f.name),
-          subtitle: Text(f.brand),
-          leading: CircleAvatar(child: Text(f.value.toString())),
-          trailing: Text('${f.price}P'),
-        )).toList();
-  }
 }
-
-
-
-//import 'package:http/http.dart' as http;
-//import 'dart:convert';
-//  @override
-//  State<StatefulWidget> createState() {
-//    return CCListState();
-//  }
-//}
-//
-//class CCListState extends State<CCList> {
-//  //List<CCData> data = [];
-//floatingActionButton: FloatingActionButton(
-//        child: Icon(Icons.refresh),
-//        onPressed: () => _loadCC(),
-//      ),
-//  _loadCC() async {
-//    //final response = await http.get('https://world.openfoodfacts.org/api/v0/product/04963406');
-//      //final response = jsonDecode('data.json');
-//      //if (response.statusCode == 200) { //success response from server
-//        //print(response.body);
-////    var allData = (json.decode(response
-////    ) as Map) as Map<String, dynamic>;
-//
-//    var ccDataList = List<CCData>();
-//    response.forEach((String key, dynamic val) {
-//      var record = CCData(
-//          firstName: val['firstName']);
-//
-//          ccDataList.add(record);
-//        });
-//        setState(() {
-//          data = ccDataList;
-//        });
-//      //}
-//    }
