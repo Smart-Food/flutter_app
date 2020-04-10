@@ -33,5 +33,40 @@
     "picture": "https://clck.ru/MgRPE",
     "oldPrice": 55.0,
     "price": 85.0
+  },
+  {
+    "id": 6,
+    "name": "Product6",
+    "picture": "https://clck.ru/MgRPE",
+    "oldPrice": 55.0,
+    "price": 85.0
+  },
+  {
+    "id": 7,
+    "name": "Product7",
+    "picture": "https://clck.ru/MgRPE",
+    "oldPrice": 55.0,
+    "price": 85.0
+  },
+  {
+    "id": 8,
+    "name": "Product8",
+    "picture": "https://clck.ru/MgRPE",
+    "oldPrice": 55.0,
+    "price": 85.0
+  },
+  {
+    "id": 9,
+    "name": "Product9",
+    "picture": "https://clck.ru/MgRPE",
+    "oldPrice": 55.0,
+    "price": 85.0
+  },
+  {
+    "id": 10,
+    "name": "Product10",
+    "picture": "https://clck.ru/MgRPE",
+    "oldPrice": 55.0,
+    "price": 85.0
   }
 ]

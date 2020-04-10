@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/productInfo.dart';
-class Product extends StatefulWidget { // класс, который может обновляться
+
+class Product extends StatefulWidget {
   String name,
       brand,
       picture;
@@ -20,37 +21,33 @@ class Product extends StatefulWidget { // класс, который может 
   class ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
-    return Card( // виджет, отвечающий за отображение информации
-      child: Hero( // виджет, отвечающий за анимацию
+    return Card(
+      child: Hero(
           tag: widget.id,
           child: Material(
-            child: InkWell( // область ответственная за касания пользователя
+            child: InkWell(
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => ProductInfo(
-                  name: widget.name, // передача параметров в класс ProductInfo
-                  id:widget.id, // widget - класс Product
-                  picture: widget.picture,  
-                  value: widget.value, 
-                  brand: widget.brand,
-                  oldPrice: widget.oldPrice, 
-                  price: widget.price,
+                  name: widget.name, id:widget.id, picture: widget.picture,
+                  value: widget.value, brand: widget.brand,
+                  oldPrice: widget.oldPrice, price: widget.price,
                 )
               )),
-              child: GridTile( // прокручиваемая таблица с виджетами
-                  footer: Container( // footer - виджет GridTile
-                    color: Colors.white70, // цвет с непрозрачностью 70
-                    child: ListTile( // список фиксированной длины, содержащий текст
+              child: GridTile(
+                  footer: Container(
+                    color: Colors.white70,
+                    child: ListTile(
                       leading: Text(
                         widget.name,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       title: Text(
-                        '$widget.price' + 'р',
+                        widget.price.toString() + 'р',
                         style: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.w800), // 
+                            color: Colors.red, fontWeight: FontWeight.w800),
                       ),
                       subtitle: Text(
-                        '$widget.oldPrice' + 'р',
+                        widget.oldPrice.toString() + 'р',
                         style: TextStyle(
                             color: Colors.black54,
                             fontWeight: FontWeight.w800,
