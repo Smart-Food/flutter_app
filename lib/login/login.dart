@@ -146,7 +146,7 @@ class _LoginState extends State<LoginApp> {
                       fontSize: 1.7 * SizeConfig.textMultiplier
                   ),),
                   SizedBox(width: 1 * SizeConfig.widthMultiplier,),
-                  Text("Зарегистрируйтесь?", style: TextStyle(
+                  Text("Зарегистрируйтесь", style: TextStyle(
                       color: Colors.blue[600],
                       fontSize: 1.7 * SizeConfig.textMultiplier
                   ),),
