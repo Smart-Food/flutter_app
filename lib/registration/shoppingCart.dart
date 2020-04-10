@@ -73,8 +73,10 @@ class _ShoppingCart extends State<ShoppingCart> {
           splashColor: Theme.of(context).primaryColor,
           highlightColor: Theme.of(context).primaryColor,
           color: Colors.white,
+
           child: Text('Оплатить',
               style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20)),
+
           onPressed: () {
 
             },
