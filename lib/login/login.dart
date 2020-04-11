@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/login/SizeConfig.dart';
+import 'package:flutterapp/SizeConfig.dart';
 
 class Login extends StatelessWidget {
   // This widget is the root of your application.

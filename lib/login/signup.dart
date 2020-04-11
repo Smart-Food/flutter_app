@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/login/SizeConfig.dart';
+import 'package:flutterapp/SizeConfig.dart';
 import 'package:flutterapp/login/login.dart';
 
 class SignupApp extends StatelessWidget {

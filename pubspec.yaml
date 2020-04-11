@@ -39,6 +39,12 @@ flutter:
     - assets/data.json
     - assets/Apalkoff.jpg
     - creatingprofile.png
+    - assets/biscuits.png
+    - assets/breads.png
+    - assets/cakes.png
+    - assets/chocolates.png
+    - assets/creatingprofile.png
+    - assets/marshmallows.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
