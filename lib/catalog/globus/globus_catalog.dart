@@ -70,7 +70,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
                 Container( // иконка меню магазинов
                   child: IconButton(
                       onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ShoppingCart(cart, sum)
+                          builder: (context) => ShoppingCart(cart)
                       )),
                       icon: Icon(Icons.menu),
                       color: Colors.black
@@ -80,7 +80,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
                 Container( // иконка корзины
                   child: IconButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ShoppingCart(cart, sum)
+                        builder: (context) => ShoppingCart(cart)
                     )),
                     icon: Icon(Icons.shopping_cart),
                     color: Colors.black
