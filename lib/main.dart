@@ -1,127 +1,132 @@
+import 'package:flutterapp/Animation/FadeAnimation.dart';
+import 'package:flutterapp/menu.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/products/productList.dart';
-import 'package:flutterapp/registration/shoppingCart.dart';
-import 'package:flutterapp/services/auth.dart';
-import 'package:flutterapp/services/payment.dart';
-import 'package:provider/provider.dart';
+import 'package:page_transition/page_transition.dart';
 
-import 'domain/user.dart';
-import 'login/login.dart';
-import 'maps.dart';
-
-void main() => runApp(MyApp());
+void main() => runApp(
+    MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyHomePage()
+    )
+);
 
 class MyApp extends StatelessWidget {
-  Map<String, WidgetBuilder> staticRoutes = {
-    '/': (context) => MyHomePage(title: 'SmartFood'), // Главная страница приложения
-  };
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    Map<String, WidgetBuilder> routes = Map();
-    routes.addAll(staticRoutes);
-    return StreamProvider<User>.value(
-        value: AuthService().currentUser,
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false, //Убрана надпись Debug
-          title: 'SmartFood',
-          theme: ThemeData(
-              primaryColor: Color.fromRGBO(50, 65, 85, 1),
-              textTheme: TextTheme(title: TextStyle(color:  Colors.white))
-          ),
-          initialRoute: '/',
-          routes: routes,
-        )
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
 
-  final String title;
+class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
+  AnimationController _scaleController;
+  Animation<double> _scaleAnimation;
+
+  bool hide = false;
 
   @override
-  Widget build(BuildContext context) { // получение ширины экрана
-    final double iconSize = MediaQuery.of(context).size.width * 0.2;
-    //final double indentSize = MediaQuery.of(context).size.width * 0.045;
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _scaleController = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: 300)
+    );
+
+    _scaleAnimation = Tween<double>(
+        begin: 1.0,
+        end: 30.0
+    ).animate(_scaleController)..addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        Navigator.push(context, PageTransition(child: Menu(), type: PageTransitionType.fade));
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+
+    _scaleController.dispose();
+  }
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      appBar: AppBar(
-        title: Text(title),
-        actions: <Widget>[
-          FlatButton.icon(onPressed: (){
-            AuthService().logOut(); //  выход из аккаунта
-          },
-              icon: Icon(Icons.supervised_user_circle), // иконка выхода
-              label: SizedBox.shrink() // shrink делает объект незаметным,
-            // применяется там где не используются обязательные параметры
-          )
-        ],
-      ),
-      body: Row( // строка, которая объединяет кнопки в один объект
-          children: <Widget>[
-      Container(
-        width: iconSize,
-        child: RaisedButton(
-              child: Icon(
-                Icons.fastfood,
-                color: Colors.white),
-              color: Theme.of(context).primaryColor,
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
-                  builder: (context) => Products() // context - текущее окружение, Products - страница с продуктами
-              )),
-            ),),
-      Container(
-        width: iconSize,
-           child: RaisedButton(
-              child: Icon(
-                  Icons.assignment_ind,
-                  color: Colors.white
-              ),
-              color: Color.fromRGBO(50, 65, 85, 1),
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Login()
-              )),
-            ),),
-      Container(
-        width: iconSize,
-        child: RaisedButton(
-              child: Icon(
-                  Icons.map,
-                  color: Colors.white
-              ),
-              color: Color.fromRGBO(50, 65, 85, 1),
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => SmartMaps()
-              )),
-            ),),
-      Container(
-        width: iconSize,
-        child: RaisedButton(
-              child: Icon(
-                  Icons.payment,
-                  color: Colors.white
-              ),
-              color: Color.fromRGBO(50, 65, 85, 1),
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Payment()
-              )),
-            ),),
-      Container(
-        width: iconSize,
-        child: RaisedButton(
-              child: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.white
-              ),
-              color: Color.fromRGBO(50, 65, 85, 1),
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ShoppingCart(cart)//, sum)
-              )),
-            ),)
-          ],
+
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/background.jpg'),
+                fit: BoxFit.cover
+            )
         ),
-      );
+        child: Container(
+          padding: EdgeInsets.all(30),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  colors: [
+                    Colors.black.withOpacity(.9),
+                    Colors.black.withOpacity(.6),
+                    Colors.black.withOpacity(.8),
+                    Colors.black.withOpacity(.3),
+                  ]
+              )
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              FadeAnimation(1, Text("Добро пожаловать в приложение SmartFood.",
+                style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold, height: 1.1),)),
+              SizedBox(height: 30,),
+              FadeAnimation(1.2, Text("Мы поможем вам заказать самые свежие продукты из супермаркетов",
+                style: TextStyle(color: Colors.white.withOpacity(.7), fontSize: 25, fontWeight: FontWeight.w100),)),
+              SizedBox(height: 150,),
+              FadeAnimation(1.4, InkWell(
+                onTap: () {
+                  setState(() {
+                    hide = true;
+                  });
+                  _scaleController.forward();
+                },
+                child: AnimatedBuilder(
+                    animation: _scaleController,
+                    builder: (context, child) => Transform.scale(
+                      scale: _scaleAnimation.value,
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.green[700]
+                        ),
+                        child: hide == false ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Text("Найти ближайший магазин", style: TextStyle(color: Colors.white, fontSize: 17),),
+                            Icon(Icons.arrow_forward, color: Colors.white,)
+                          ],
+                        ) : Container(),
+                      ),
+                    )
+                ),
+              )),
+              SizedBox(height: 60,)
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

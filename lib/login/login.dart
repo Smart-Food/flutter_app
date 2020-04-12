@@ -1,163 +1,126 @@
+import 'package:flutterapp/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/login/SizeConfig.dart';
+import 'package:flutterapp/login/profilefirst.dart';
+import 'package:flutterapp/login/signup.dart';
+
+void main() => runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Login(),
+    )
+);
 
 class Login extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return OrientationBuilder(
-          builder: (context, orientation) {
-            SizeConfig().init(constraints, orientation);
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'HomeScreen App',
-              home: LoginApp(),
-            );
-          },
-        );
-      },
-    );
-  }
-}
-
-class LoginApp extends StatefulWidget {
-  LoginApp({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _LoginState createState() => _LoginState();
-}
-
-class _LoginState extends State<LoginApp> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: 15 * SizeConfig.heightMultiplier,),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(25.0),
-                child: Image.asset("assets/Apalkoff.jpg", fit: BoxFit.cover, height: 120.0, width: 120.0,),
-              ),
-              SizedBox(height: 5 * SizeConfig.heightMultiplier,),
-              Text("Илья Апальков", style: TextStyle(
-                  color: Colors.blueGrey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 4 * SizeConfig.textMultiplier
-              ),),
-              SizedBox(height: 3 * SizeConfig.heightMultiplier,),
-              Padding(
-                padding: const EdgeInsets.only(left: 50.0, right: 50.0),
-                child: Text("Это вы?",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontSize: 2 * SizeConfig.textMultiplier
-                  ),),
-              ),
-              SizedBox(height: 3 * SizeConfig.heightMultiplier,),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                child: TextFormField(
-                  decoration: new InputDecoration(
-                      labelText: "Email..",
-                      fillColor: Colors.white,
-                      border: new OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(15.0),
-                          borderSide: new BorderSide(
-                              color: Colors.blueGrey
-                          )
-                      )
-                  ),
-                  validator: (val){
-                    if(val.length ==0){
-                      return "Email не может быть пустым";
-                    }
-                    else {
-                      return null;
-                    }
-                  },
-                  keyboardType: TextInputType.text,
-                  style: new TextStyle(
-                      color: Colors.blueGrey
-                  ),
-                ),
-              ),
-              SizedBox(height: 3 * SizeConfig.heightMultiplier,),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                child: TextFormField(
-                  decoration: new InputDecoration(
-                      labelText: "Пароль..",
-                      fillColor: Colors.white,
-                      border: new OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(15.0),
-                          borderSide: new BorderSide(
-                              color: Colors.blueGrey
-                          )
-                      )
-                  ),
-                  validator: (val){
-                    if(val.length ==0){
-                      return "Пароль не должен быть пустым";
-                    }
-                    else {
-                      return null;
-                    }
-                  },
-                  keyboardType: TextInputType.text,
-                  style: new TextStyle(
-                      color: Colors.blueGrey
-                  ),
-                ),
-              ),
-              SizedBox(height: 5 * SizeConfig.heightMultiplier,),
-              Padding(
-                padding: const EdgeInsets.only(left: 40.0, right: 40.0),
-                child: Container(
-                  height: 7 * SizeConfig.heightMultiplier,
-                  decoration: BoxDecoration(
-                      color: Colors.yellow[600],
-                      borderRadius: BorderRadius.circular(20.0)
-                  ),
-                  child: Center(
-                    child: Text("Войти", style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold
-                    ),),
-                  ),
-                ),
-              ),
-              SizedBox(height: 2 * SizeConfig.heightMultiplier,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                colors: [
+                  Colors.orange[900],
+                  Colors.orange[800],
+                  Colors.orange[400]
+                ]
+            )
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 80,),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Нет аккаунта?", style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontSize: 1.7 * SizeConfig.textMultiplier
-                  ),),
-                  SizedBox(width: 1 * SizeConfig.widthMultiplier,),
-                  Text("Зарегистрируйтесь", style: TextStyle(
-                      color: Colors.blue[600],
-                      fontSize: 1.7 * SizeConfig.textMultiplier
-                  ),),
+                  FadeAnimation(1, Text("Вход", style: TextStyle(color: Colors.white, fontSize: 40),)),
+                  SizedBox(height: 10,),
+                  FadeAnimation(1.3, Text("Добро пожаловать домой", style: TextStyle(color: Colors.white, fontSize: 18),)),
                 ],
-              )
-            ],
-          ),
+              ),
+            ),
+            SizedBox(height: 60),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60))
+                ),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.all(30),
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(height: 20,),
+                        FadeAnimation(1.4, Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [BoxShadow(
+                                  color: Color.fromRGBO(225, 95, 27, .3),
+                                  blurRadius: 20,
+                                  offset: Offset(0, 10)
+                              )]
+                          ),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    border: Border(bottom: BorderSide(color: Colors.grey[200]))
+                                ),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      hintText: "Email или Номер телефона",
+                                      hintStyle: TextStyle(color: Colors.grey),
+                                      border: InputBorder.none
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    border: Border(bottom: BorderSide(color: Colors.grey[200]))
+                                ),
+                                child: TextField(
+                                  decoration: InputDecoration(
+                                      hintText: "Пароль",
+                                      hintStyle: TextStyle(color: Colors.grey),
+                                      border: InputBorder.none
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        )),
+                        SizedBox(height: 40,),
+                        FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
+                        SizedBox(height: 20,),
+                        FadeAnimation(1.6, Container(
+                          child: RaisedButton(
+                            color: Colors.orange[900],
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)
+                            ),
+                            onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
+                                builder: (context) => SignUp() // Context - текущее окружение, Products - страница с продуктами
+                            )),
+                            child: Center(
+                              child: Text("Пропустить", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                            ),
+                          )
+                        )),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ),
-
-
     );
   }
 }
