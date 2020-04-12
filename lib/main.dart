@@ -63,6 +63,7 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
