@@ -11,7 +11,6 @@ class MyApp extends StatelessWidget {
       builder: (context, constraints) {
         return OrientationBuilder(
           builder: (context, orientation) {
-//            SizeConfig().init(constraints, orientation);
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'HomeScreen App',
