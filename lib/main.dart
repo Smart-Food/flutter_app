@@ -117,7 +117,7 @@ class MyHomePage extends StatelessWidget {
               ),
               color: Color.fromRGBO(50, 65, 85, 1),
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ShoppingCart(cart, sum)
+                  builder: (context) => ShoppingCart(cart)//, sum)
               )),
             ),)
           ],

@@ -1,19 +1,19 @@
-
+import 'package:flutterapp/products/productList.dart';
 import 'package:flutter/material.dart';
 
 class ShoppingCart extends StatefulWidget {
   final cart;
-  double sum;
-  ShoppingCart(this.cart, this.sum);
+  //double sum;
+  ShoppingCart(this.cart);//, this.sum);
   @override
-  _ShoppingCart createState() => _ShoppingCart(cart, sum);
+  _ShoppingCart createState() => _ShoppingCart(cart);//, sum);
 }
 
 class _ShoppingCart extends State<ShoppingCart> {
   @override
   final cart;
-  double sum;
-  _ShoppingCart(this.cart, this.sum);
+  //double sum;
+  _ShoppingCart(this.cart);//, this.sum);
   Widget build(BuildContext context) {
     return Scaffold(
         appBar:AppBar(
