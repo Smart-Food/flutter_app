@@ -2,11 +2,12 @@ import 'package:flutterapp/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/login/profilefirst.dart';
 import 'package:flutterapp/login/signup.dart';
+import 'package:flutterapp/main.dart';
 
 void main() => runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: MyHomePage(),
     )
 );
 
