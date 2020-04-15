@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/catalog/alcohol.dart';
-import 'package:flutterapp/catalog/breads.dart';
-import 'package:flutterapp/catalog/house.dart';
-import 'package:flutterapp/catalog/cosmetics.dart';
+import 'package:flutterapp/catalog/globus/alcohol.dart';
+import 'package:flutterapp/catalog/globus/breads.dart';
+import 'package:flutterapp/catalog/globus/house.dart';
+import 'package:flutterapp/catalog/globus/cosmetics.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
+import 'package:flutterapp/catalog/globus/discounts/screens/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -126,17 +127,23 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
               isScrollable: true,
               tabs: <Widget>[
                 Tab(
-                  child: Text("Хлеб, кондитерские изделия", style: TextStyle(
+                  child: Text("Главная", style: TextStyle(
                       fontSize: 17.5,
                       fontFamily: 'OpenSans'
                   ),),
                 ),
                 Tab(
-                  child: Text("Косметика и гигиена", style: TextStyle(
+                  child: Text("Хлеб, кондитерские изделия", style: TextStyle(
                       fontSize: 17.5,
                       fontFamily: 'OpenSans'
                   ),),
                 ),
+//                Tab(
+//                  child: Text("Косметика и гигиена", style: TextStyle(
+//                      fontSize: 17.5,
+//                      fontFamily: 'OpenSans'
+//                  ),),
+//                ),
                 Tab(
                   child: Text("Дом, хобби, техника", style: TextStyle(
                       fontSize: 17.5,
@@ -155,8 +162,9 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
               child: TabBarView(
                   controller: tabController,
                   children: <Widget>[
+                    HomeScreen(),
                     Breads(),
-                    Cosmetics(),
+//                    Cosmetics(),
                     House(),
                     Alcohol(),
                   ]),

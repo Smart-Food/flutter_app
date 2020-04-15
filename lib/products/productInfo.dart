@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
 import 'package:flutterapp/products/productList.dart';
