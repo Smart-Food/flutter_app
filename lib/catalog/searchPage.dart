@@ -30,7 +30,9 @@ class ProductSearch extends SearchDelegate<Product>{
 
   @override
   Widget buildResults(BuildContext context) {
-    final suggestionList = productdata;
+    final suggestionList = query.isEmpty
+        ? productdata
+        : productdata.where((p) => p.name.contains(RegExp(query, caseSensitive: false))).toList();
 
     return ListView.separated(
       controller: ScrollController(),
@@ -38,7 +40,7 @@ class ProductSearch extends SearchDelegate<Product>{
       itemBuilder: (context, index){
         return ListTile(
           title: Text(suggestionList[index].name),
-          subtitle: Text(suggestionList[index].brand),
+          subtitle: Text(suggestionList[index].brand.toString()),
           trailing: Text("\$${suggestionList[index].price}",
                   style: TextStyle(color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.w500),),
           leading: Image.network(suggestionList[index].picture),
@@ -103,7 +105,7 @@ class ProductSearch extends SearchDelegate<Product>{
                   style: TextStyle(color: Colors.grey)),
             ]),
         ),
-        subtitle: Text(suggestionList[index].brand),
+        subtitle: Text(suggestionList[index].brand.toString()),
         leading: Image.network(suggestionList[index].picture),
      );}
 

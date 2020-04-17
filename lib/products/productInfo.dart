@@ -50,7 +50,7 @@ class _ProductInfoState extends State<ProductInfo> {
                   color: Colors.white,
                 ),
                 onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => ShoppingCart(cart,sum)))
+                MaterialPageRoute(builder: (context) => ShoppingCart(cart)))
             ),
               Positioned(
                 child: Stack(
