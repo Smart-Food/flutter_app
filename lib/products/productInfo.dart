@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
 import 'package:flutterapp/products/productList.dart';
@@ -51,7 +50,7 @@ class _ProductInfoState extends State<ProductInfo> {
                   color: Colors.white,
                 ),
                 onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => ShoppingCart(cart)))
+                MaterialPageRoute(builder: (context) => ShoppingCart(cart,sum)))
             ),
               Positioned(
                 child: Stack(
@@ -109,6 +108,8 @@ class _ProductInfoState extends State<ProductInfo> {
                 sum = sum + item.num*item.price;
 
               });});
+                //var bloc = Provider.of<Cart>(context, listen: false);
+                //bloc.addToCart(widget);
             },
           )
         ],

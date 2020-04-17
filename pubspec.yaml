@@ -24,6 +24,8 @@ dependencies:
   line_icons: ^0.2.0
   simple_animations: ^1.3.3
   page_transition: ^1.1.4
+  font_awesome_flutter: ^8.5.0
+  gradient_text: ^1.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,7 +44,7 @@ flutter:
   assets:
     - assets/data.json
     - assets/Apalkoff.jpg
-    - creatingprofile.png
+    - assets/creatingprofile.png
     - assets/biscuits.png
     - assets/breads.png
     - assets/cakes.png
@@ -50,6 +52,11 @@ flutter:
     - assets/creatingprofile.png
     - assets/marshmallows.png
     - assets/background.jpg
+    - assets/hotel0.jpg
+    - assets/buckweat1.jpg
+    - assets/orderFoodOnline.jpg
+    - assets/onlineMenu.jpg
+    - assets/restaurantsNearMe.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

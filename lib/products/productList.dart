@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/productInfo.dart';
-import 'product.dart';
+import 'package:flutterapp/products/product.dart';
 import 'dart:convert';
 class Products extends StatefulWidget {
   @override
@@ -15,17 +15,14 @@ class _ProductsState extends State<Products> {
   @override
   Widget build(BuildContext context) {
     return Scaffold( // отображение страницы
-      appBar: AppBar( //панель виджетов на странице
-        title: Text('Продукты'), // заголовок
-      ),
       body: new Center (
         child: FutureBuilder(builder: (context, snapshot){ // тип данных Future - работа с
           var productList=json.decode(snapshot.data.toString()); // данными, когда они будут доступны
-          return GridView.builder(
-            gridDelegate: // контролирует расположение объектов GridView
-            new SliverGridDelegateWithFixedCrossAxisCount( // таблица расположений
-              // с фиксированным набором колонок / строк
-                crossAxisCount: 2), // два объекта по горизонтали
+          return ListView.builder(
+//            gridDelegate: // контролирует расположение объектов GridView
+//            new SliverGridDelegateWithFixedCrossAxisCount( // таблица расположений
+//              // с фиксированным набором колонок / строк
+//                crossAxisCount: 2), // два объекта по горизонтали
             itemBuilder: (BuildContext context, int index){
               return Product( // создание класса Product из Json-файла
                 id: productList[index]["id"],
