@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/productList.dart';
+
+import '../payments/main.dart';
 class ShoppingCart extends StatefulWidget {
   final cart;
   ShoppingCart(this.cart);
@@ -75,9 +77,8 @@ class _ShoppingCart extends State<ShoppingCart> {
           child: Text('Оплатить',
               style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20)),
 
-          onPressed: () {
-
-            },
+          onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => Payment()))
         )
       ],
     )
