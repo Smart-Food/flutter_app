@@ -1,15 +1,34 @@
+import 'dart:collection';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutterapp/catalog/alcohol.dart';
 import 'package:flutterapp/catalog/breads.dart';
 import 'package:flutterapp/catalog/house.dart';
 import 'package:flutterapp/catalog/cosmetics.dart';
+import 'package:flutterapp/catalog/searchPage.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
+import 'package:flutterapp/products/product.dart';
 
 void main() => runApp(MyApp());
-
+List<Product> productList = [
+  Product(name: 'p1', id:1, picture: 'https://clck.ru/MgRPE',
+    value: 2, brand: 'b1',
+    oldPrice: 100, price: 80),
+  Product(name: 'p2', id:2, picture: 'https://clck.ru/MgRPE',
+      value: 2, brand: 'b1',
+      oldPrice: 100, price: 80),
+  Product(name: 'p3', id:3, picture: 'https://clck.ru/MgRPE',
+      value: 2, brand: 'b1',
+      oldPrice: 100, price: 80),
+  Product(name: 'p4', id:4, picture: 'https://clck.ru/MgRPE',
+      value: 2, brand: 'b1',
+      oldPrice: 100, price: 80),
+];
 class MyApp extends StatelessWidget { // Главная страница приложения
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -104,14 +123,19 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: Row(
                   children: <Widget>[
+
                     Text("Поиск", style: TextStyle( // текст поисковой строки и его параметры
                         color: Colors.grey,
                         fontSize: 16.8,
                         fontFamily: 'OpenSans'
-                    ),),
+                    ),
+                    ),
                     Spacer(),
-                    Icon(Icons.search, color: Colors.black, size: 24) // иконка поисковой строки // M
-                  ],
+                    IconButton(
+                        icon: Icon(Icons.search, color: Colors.black, size: 24),
+                        onPressed: () {showSearch(context: context, delegate: ProductSearch(productList));},
+                    ) // иконка поисковой строки // M
+                    ],
                 ),
               ),
             ),
