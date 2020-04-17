@@ -3,14 +3,7 @@ import 'package:flutterapp/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
-import 'login/login.dart';
-
-void main() => runApp(
-    MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Login()
-    )
-);
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -18,7 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
       home: MyHomePage(),
     );
   }
