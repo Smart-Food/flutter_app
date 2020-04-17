@@ -34,7 +34,7 @@ class _ProductInfoState extends State<ProductInfo> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.blue,
-        title: Text('Продукт ' + widget.id.toString()),
+        title: Text(widget.name),
         actions: <Widget>[
           new IconButton(
               icon: Icon(
