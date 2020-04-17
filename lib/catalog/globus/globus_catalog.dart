@@ -1,34 +1,16 @@
-import 'dart:collection';
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutterapp/catalog/alcohol.dart';
-import 'package:flutterapp/catalog/breads.dart';
-import 'package:flutterapp/catalog/house.dart';
-import 'package:flutterapp/catalog/cosmetics.dart';
-import 'package:flutterapp/catalog/searchPage.dart';
+import 'package:flutterapp/catalog/globus/alcohol.dart';
+import 'package:flutterapp/catalog/globus/breads.dart';
+import 'package:flutterapp/catalog/globus/house.dart';
+import 'package:flutterapp/catalog/globus/cosmetics.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
-import 'package:flutterapp/products/product.dart';
+import 'package:flutterapp/catalog/globus/discounts/screens/home_screen.dart';
 
 void main() => runApp(MyApp());
-List<Product> productList = [
-  Product(name: 'p1', id:1, picture: 'https://clck.ru/MgRPE',
-    value: 2, brand: 'b1',
-    oldPrice: 100, price: 80),
-  Product(name: 'p2', id:2, picture: 'https://clck.ru/MgRPE',
-      value: 2, brand: 'b1',
-      oldPrice: 100, price: 80),
-  Product(name: 'p3', id:3, picture: 'https://clck.ru/MgRPE',
-      value: 2, brand: 'b1',
-      oldPrice: 100, price: 80),
-  Product(name: 'p4', id:4, picture: 'https://clck.ru/MgRPE',
-      value: 2, brand: 'b1',
-      oldPrice: 100, price: 80),
-];
+
 class MyApp extends StatelessWidget { // Главная страница приложения
   // This widget is the root of your application.
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -89,7 +71,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
                 Container( // иконка меню магазинов
                   child: IconButton(
                       onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ShoppingCart(cart)
+                          builder: (context) => ShoppingCart(cart, sum)
                       )),
                       icon: Icon(Icons.menu),
                       color: Colors.black
@@ -99,7 +81,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
                 Container( // иконка корзины
                   child: IconButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ShoppingCart(cart)
+                        builder: (context) => ShoppingCart(cart, sum)
                     )),
                     icon: Icon(Icons.shopping_cart),
                     color: Colors.black
@@ -123,19 +105,14 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
                 padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                 child: Row(
                   children: <Widget>[
-
                     Text("Поиск", style: TextStyle( // текст поисковой строки и его параметры
                         color: Colors.grey,
                         fontSize: 16.8,
                         fontFamily: 'OpenSans'
-                    ),
-                    ),
+                    ),),
                     Spacer(),
-                    IconButton(
-                        icon: Icon(Icons.search, color: Colors.black, size: 24),
-                        onPressed: () {showSearch(context: context, delegate: ProductSearch(productList));},
-                    ) // иконка поисковой строки // M
-                    ],
+                    Icon(Icons.search, color: Colors.black, size: 24) // иконка поисковой строки // M
+                  ],
                 ),
               ),
             ),
@@ -150,17 +127,23 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
               isScrollable: true,
               tabs: <Widget>[
                 Tab(
-                  child: Text("Хлеб, кондитерские изделия", style: TextStyle(
+                  child: Text("Главная", style: TextStyle(
                       fontSize: 17.5,
                       fontFamily: 'OpenSans'
                   ),),
                 ),
                 Tab(
-                  child: Text("Косметика и гигиена", style: TextStyle(
+                  child: Text("Хлеб, кондитерские изделия", style: TextStyle(
                       fontSize: 17.5,
                       fontFamily: 'OpenSans'
                   ),),
                 ),
+//                Tab(
+//                  child: Text("Косметика и гигиена", style: TextStyle(
+//                      fontSize: 17.5,
+//                      fontFamily: 'OpenSans'
+//                  ),),
+//                ),
                 Tab(
                   child: Text("Дом, хобби, техника", style: TextStyle(
                       fontSize: 17.5,
@@ -179,8 +162,9 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
               child: TabBarView(
                   controller: tabController,
                   children: <Widget>[
+                    HomeScreen(),
                     Breads(),
-                    Cosmetics(),
+//                    Cosmetics(),
                     House(),
                     Alcohol(),
                   ]),
