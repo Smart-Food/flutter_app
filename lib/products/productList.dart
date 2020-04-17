@@ -8,8 +8,9 @@ class Products extends StatefulWidget {
 }
 
 //var productList = jsonDecode('data.json');
-List<ProductInfo> cart = [];
+List<Product> cart = [];
 double sum = 0;
+
 class _ProductsState extends State<Products> {
 
   @override

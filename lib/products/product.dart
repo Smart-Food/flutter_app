@@ -9,10 +9,10 @@ class Product extends StatefulWidget {
   double price,
       value,
       oldPrice;
-  int id;
+  int id, num;
   Product({
     this.name, this.brand, this.price, this.value,
-    this.picture, this.oldPrice, this.id
+    this.picture, this.oldPrice, this.id, this.num=0
   });
 
   @override
@@ -35,7 +35,15 @@ class ProductState extends State<Product> {
                   trailing: IconButton(
                   icon: Icon(Icons.add), iconSize: 30,
                   tooltip: 'Добавить в корзину',
-                  onPressed: () {}
+                  onPressed: () { setState((){
+                    if(cart.contains(widget)){
+                      widget.num += 1;
+                    }
+                    else {
+                      cart.add(widget); //update
+                      widget.num = 1;
+                    }
+                    });}
                   ),
                   leading: Image.network(widget.picture),
                   title: Text(
@@ -53,10 +61,10 @@ class ProductState extends State<Product> {
                 ),
               ),),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ProductInfo(
+                  builder: (context) => ProductInfo(product: Product(
                     name: widget.name, id:widget.id, picture: widget.picture,
                     value: widget.value, brand: widget.brand,
-                    oldPrice: widget.oldPrice, price: widget.price,
+                    oldPrice: widget.oldPrice, price: widget.price,)
                   )
               )),
             ),
