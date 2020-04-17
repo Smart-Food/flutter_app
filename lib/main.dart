@@ -1,9 +1,15 @@
 import 'package:flutterapp/Animation/FadeAnimation.dart';
-import 'package:flutterapp/menu.dart';
+//import 'package:flutterapp/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:flutterapp/onboarding/onboarding.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+    MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyHomePage()
+    )
+);
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -11,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
       home: MyHomePage(),
     );
   }
@@ -42,7 +49,7 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
         end: 30.0
     ).animate(_scaleController)..addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.push(context, PageTransition(child: Menu(), type: PageTransitionType.fade));
+        Navigator.push(context, PageTransition(child: Onboarding(), type: PageTransitionType.fade));
       }
     });
   }
@@ -57,7 +64,6 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(

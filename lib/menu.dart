@@ -7,6 +7,7 @@ import 'package:flutterapp/registration/shoppingCart.dart';
 import 'package:flutterapp/services/payment.dart';
 import 'login/login.dart';
 import 'maps.dart';
+//import 'package:flutterapp/services/paymentMain.dart';
 
 
 void main() => runApp(MyApp());
@@ -31,7 +32,7 @@ class _MenuState extends State<Menu> { // Меню приложения
   final List<Widget> _children = [
     GlobusCatalog(),
     SmartMaps(),
-    Payment(),
+    SmartMaps(),
     Login(),
   ];
 
