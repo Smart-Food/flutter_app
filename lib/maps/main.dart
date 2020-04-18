@@ -15,6 +15,7 @@ class _SmartMapsState extends State<SmartMaps> {
     return new Scaffold(
         appBar: AppBar(
           title: new Text('SmartFood Maps'),
+          backgroundColor: Colors.green,
           leading: IconButton(
               icon: Icon(Icons.arrow_back),
               onPressed: () => Navigator.of(context)

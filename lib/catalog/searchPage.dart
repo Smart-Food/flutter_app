@@ -36,7 +36,6 @@ class ProductSearch extends SearchDelegate<Product>{
 
     return ListView.separated(
       controller: ScrollController(),
-      itemCount: suggestionList.length,
       itemBuilder: (context, index){
         return ListTile(
           title: Text(suggestionList[index].name),
@@ -57,6 +56,7 @@ class ProductSearch extends SearchDelegate<Product>{
         );
         //);
       },
+      itemCount: suggestionList.length,
       separatorBuilder: (context, index){
         return Divider();
       },
@@ -74,7 +74,6 @@ class ProductSearch extends SearchDelegate<Product>{
 
     return ListView.separated(
       controller: ScrollController(),
-      itemCount: suggestionList.length,
       separatorBuilder: (context, index){
           return Divider();
         },
@@ -107,9 +106,9 @@ class ProductSearch extends SearchDelegate<Product>{
         ),
         subtitle: Text(suggestionList[index].brand.toString()),
         leading: Image.network(suggestionList[index].picture),
-     );}
+     );},
 
-
+      itemCount: suggestionList.length,
     );
   }
 

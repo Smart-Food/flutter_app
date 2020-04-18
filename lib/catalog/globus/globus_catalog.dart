@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutterapp/catalog/globus/alcohol.dart';
 import 'package:flutterapp/catalog/globus/breads.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget { // Главная страница при�
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
+      LayoutBuilder(
       builder: (context, constraints) {
         return OrientationBuilder(
           builder: (context, orientation) {
@@ -69,7 +71,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
   @override
   Widget build(BuildContext context) { // Получение ширины экрана
     return Scaffold(
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
 //      actions: <Widget>[
 //        FlatButton.icon(onPressed: (){
 //          AuthService().logOut(); //  выход из аккаунта

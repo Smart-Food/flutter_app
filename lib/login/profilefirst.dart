@@ -45,9 +45,9 @@ class ProfileFirst extends StatelessWidget {
                     ),
                   )
                   ),
-                  FadeAnimation(1, Text("Ты до сюда дошёл", style: TextStyle(color: Colors.white, fontSize: 40),)),
+                  //FadeAnimation(1, Text("Ты до сюда дошёл", style: TextStyle(color: Colors.white, fontSize: 40),)),
                   SizedBox(height: 10,),
-                  FadeAnimation(1.3, Text("И нахуя?", style: TextStyle(color: Colors.white, fontSize: 18),)),
+                  //FadeAnimation(1.3, Text("И нахуя?", style: TextStyle(color: Colors.white, fontSize: 18),)),
                 ],
               ),
             ),

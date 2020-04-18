@@ -95,7 +95,7 @@ class _ProductInfoState extends State<ProductInfo> {
             color: Colors.white,
             child: Text('Добавить в корзину'),
             //style : TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20),
-            onPressed: () {setState((){
+            onPressed: () { setState((){
               if(cart.contains(widget)){
                 widget.num += 1;
               }
