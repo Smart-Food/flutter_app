@@ -47,9 +47,9 @@ class ProductSearch extends SearchDelegate<Product>{
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ProductInfo(name: suggestionList[index].name, id:suggestionList[index].id, picture: suggestionList[index].picture,
+                builder: (context) => ProductInfo(product: Product(name: suggestionList[index].name, id:suggestionList[index].id, picture: suggestionList[index].picture,
                   value: suggestionList[index].value, brand: suggestionList[index].brand,
-                  oldPrice: suggestionList[index].oldPrice, price: suggestionList[index].price,),
+                  oldPrice: suggestionList[index].oldPrice, price: suggestionList[index].price,)),
               ),
             );
           },
@@ -84,10 +84,10 @@ class ProductSearch extends SearchDelegate<Product>{
         onTap: () {
           Navigator.push(
            context,
-           MaterialPageRoute(
-              builder: (context) => ProductInfo(name: suggestionList[index].name, id:suggestionList[index].id, picture: suggestionList[index].picture,
+            MaterialPageRoute(
+              builder: (context) => ProductInfo(product: Product(name: suggestionList[index].name, id:suggestionList[index].id, picture: suggestionList[index].picture,
                 value: suggestionList[index].value, brand: suggestionList[index].brand,
-               oldPrice: suggestionList[index].oldPrice, price: suggestionList[index].price,),
+                oldPrice: suggestionList[index].oldPrice, price: suggestionList[index].price,)),
             ),
           );
         },

@@ -13,20 +13,6 @@ import 'dart:convert';
 import '../searchPage.dart';
 
 void main() => runApp(MyApp());
-List<Product> productList = [
-  Product(name: 'p1', id:1, picture: 'https://clck.ru/MgRPE',
-    value: 2, brand: 'b1',
-    oldPrice: 100, price: 80),
-  Product(name: 'p2', id:2, picture: 'https://clck.ru/MgRPE',
-      value: 2, brand: 'b1',
-      oldPrice: 100, price: 80),
-  Product(name: 'p3', id:3, picture: 'https://clck.ru/MgRPE',
-      value: 2, brand: 'b1',
-      oldPrice: 100, price: 80),
-  Product(name: 'p4', id:4, picture: 'https://clck.ru/MgRPE',
-      value: 2, brand: 'b1',
-      oldPrice: 100, price: 80),
-];
 class MyApp extends StatelessWidget { // Главная страница приложения
   // This widget is the root of your application.
 
@@ -67,9 +53,12 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
     super.initState();
     tabController = TabController(length: 4, vsync: this); // Количество разделов в каталоге
   }
-
   @override
   Widget build(BuildContext context) { // Получение ширины экрана
+    int totalCount = 0;
+    cart.forEach((item){
+      totalCount = totalCount + item.num;
+    });
     return Scaffold(
         backgroundColor: Colors.white,
 //      actions: <Widget>[
@@ -87,6 +76,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
       productList1.forEach((item) {
         productList.add(Product(name: item['name'],brand: item['name'],price: item['price'],picture: item['picture'],));
       });
+
         return Column(
           children: <Widget>[
             Padding( // Меню магазинов и корзина
@@ -131,14 +121,36 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
                     ),
                   ),
                   Spacer(),
-                  Container( // иконка корзины
-                    child: IconButton(
+                  Stack( // иконка корзины
+                    children:<Widget>[
+                      IconButton(
                       onPressed: () => Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => ShoppingCart(cart)
                       )),
                       icon: Icon(Icons.shopping_cart),
                       color: Colors.black
                     ),
+                      Positioned(
+                          child: Stack(
+                            children: <Widget>[
+                              Icon(Icons.brightness_1,
+                                  size: 20.0, color: Colors.red[700]),
+                              Positioned(
+                                  top: 3.0,
+                                  right: 7,
+                                  child: Center(
+                                    child: Text('$totalCount',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  )
+                              ),
+                            ],
+                          )
+                      ),
+                    ]
                   ),
                 ],
               ),
@@ -150,6 +162,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
             ),*/
             SizedBox(height: 20),
             TabBar( // меню каталога товаров
+
                 controller: tabController,
                 indicatorColor: Colors.green,
                 indicatorWeight: 3.0,
@@ -192,6 +205,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
               child: Container(
                 child: TabBarView(
                     controller: tabController,
+
                     children: <Widget>[
                       //HomeScreen(),
                       Products(),
