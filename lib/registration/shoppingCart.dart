@@ -18,6 +18,7 @@ class _ShoppingCart extends State<ShoppingCart> {
     return Scaffold(
         appBar:AppBar(
           title: Text('Корзина'),
+          backgroundColor: Colors.green,
         ),
         body: ListView(
       //crossAxisAlignment: CrossAxisAlignment.start,
