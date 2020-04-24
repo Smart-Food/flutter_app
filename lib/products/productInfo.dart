@@ -34,7 +34,7 @@ class _ProductInfoState extends State<ProductInfo> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.blue,
-        title: Text('Продукт ' + widget.id.toString()),
+        title: Text(widget.name),
         actions: <Widget>[
           new IconButton(
               icon: Icon(
@@ -50,7 +50,7 @@ class _ProductInfoState extends State<ProductInfo> {
                   color: Colors.white,
                 ),
                 onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => ShoppingCart(cart,sum)))
+                MaterialPageRoute(builder: (context) => ShoppingCart(cart)))
             ),
               Positioned(
                 child: Stack(
@@ -95,7 +95,7 @@ class _ProductInfoState extends State<ProductInfo> {
             color: Colors.white,
             child: Text('Добавить в корзину'),
             //style : TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20),
-            onPressed: () {setState((){
+            onPressed: () { setState((){
               if(cart.contains(widget)){
                 widget.num += 1;
               }

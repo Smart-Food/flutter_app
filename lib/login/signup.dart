@@ -1,7 +1,7 @@
 import 'package:flutterapp/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/login/profilefirst.dart';
-import 'package:flutterapp/login/signup.dart';
+
+import 'login.dart';
 
 void main() => runApp(
     MaterialApp(
@@ -37,7 +37,7 @@ class SignUp extends StatelessWidget {
                 children: <Widget>[
                   FadeAnimation(1, Text("Регистрация", style: TextStyle(color: Colors.white, fontSize: 40),)),
                   SizedBox(height: 10,),
-                  FadeAnimation(1.3, Text("Введите своё имя, фамилию, email и пароль", style: TextStyle(color: Colors.white, fontSize: 18),)),
+                  FadeAnimation(1.3, Text("Введите логин, email и пароль", style: TextStyle(color: Colors.white, fontSize: 18),)),
                 ],
               ),
             ),
@@ -73,25 +73,25 @@ class SignUp extends StatelessWidget {
                                 ),
                                 child: TextField(
                                   decoration: InputDecoration(
-                                      hintText: "Имя",
+                                      hintText: "Логин",
                                       hintStyle: TextStyle(color: Colors.grey),
                                       border: InputBorder.none
                                   ),
                                 ),
                               ),
-                              Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: Colors.grey[200]))
-                                ),
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                      hintText: "Фамилия",
-                                      hintStyle: TextStyle(color: Colors.grey),
-                                      border: InputBorder.none
-                                  ),
-                                ),
-                              ),
+//                              Container(
+//                                padding: EdgeInsets.all(10),
+//                                decoration: BoxDecoration(
+//                                    border: Border(bottom: BorderSide(color: Colors.grey[200]))
+//                                ),
+//                                child: TextField(
+//                                  decoration: InputDecoration(
+//                                      hintText: "Фамилия",
+//                                      hintStyle: TextStyle(color: Colors.grey),
+//                                      border: InputBorder.none
+//                                  ),
+//                                ),
+//                              ),
                               Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
@@ -131,10 +131,10 @@ class SignUp extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(50)
                               ),
                               onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
-                                  builder: (context) => ProfileFirst() // Context - текущее окружение, Products - страница с продуктами
+                                  builder: (context) => Login() // Context - текущее окружение, Products - страница с продуктами
                               )),
                               child: Center(
-                                child: Text("Пропустить", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                                child: Text("Войти", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                               ),
                             )
                         )),

@@ -1,5 +1,11 @@
 import 'package:flutterapp/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterapp/menu.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:flutterapp/catalog/globus/globus_catalog.dart';
+import 'package:line_icons/line_icons.dart';
+import 'package:flutterapp/payments/main.dart';
+import 'package:flutterapp/login/login.dart';
 
 void main() => runApp(
     MaterialApp(
@@ -9,6 +15,7 @@ void main() => runApp(
 );
 
 class ProfileFirst extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,9 +52,9 @@ class ProfileFirst extends StatelessWidget {
                     ),
                   )
                   ),
-                  FadeAnimation(1, Text("Ты до сюда дошёл", style: TextStyle(color: Colors.white, fontSize: 40),)),
+                  //FadeAnimation(1, Text("Ты до сюда дошёл", style: TextStyle(color: Colors.white, fontSize: 40),)),
                   SizedBox(height: 10,),
-                  FadeAnimation(1.3, Text("И нахуя?", style: TextStyle(color: Colors.white, fontSize: 18),)),
+                  //FadeAnimation(1.3, Text("И нахуя?", style: TextStyle(color: Colors.white, fontSize: 18),)),
                 ],
               ),
             ),
@@ -59,7 +66,6 @@ class ProfileFirst extends StatelessWidget {
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60))
                 ),
               ),
-
             )
           ],
         ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+//import 'package:flutterapp/maps/home.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutterapp/catalog/globus/globus_catalog.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:flutterapp/products/productList.dart';
-import 'package:flutterapp/registration/shoppingCart.dart';
-import 'package:flutterapp/services/payment.dart';
+import 'package:flutterapp/payments/main.dart';
 import 'login/login.dart';
-import 'maps.dart';
+//import 'maps/async_maps.dart';
+import 'maps/main.dart';
 //import 'package:flutterapp/services/paymentMain.dart';
+import 'package:flutterapp/login/profilefirst.dart';
 
 
 void main() => runApp(MyApp());
@@ -32,7 +33,7 @@ class _MenuState extends State<Menu> { // Меню приложения
   final List<Widget> _children = [
     GlobusCatalog(),
     SmartMaps(),
-    SmartMaps(),
+    Payment(),
     Login(),
   ];
 

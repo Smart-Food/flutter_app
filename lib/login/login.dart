@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/login/profilefirst.dart';
 import 'package:flutterapp/login/signup.dart';
 import 'package:flutterapp/services/auth.dart';
+import 'package:flutterapp/menu.dart';
 
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);
@@ -80,35 +81,35 @@ class _AuthorizationPageState extends State<Login> {
                                 decoration: BoxDecoration(
                                     border: Border(bottom: BorderSide(color: Colors.grey[200]))
                                 ),
-                                child: _input(Icon(Icons.email), 'Email', _emailController, false),
+                                child: _input('Email', _emailController, false),
                               ),
                               Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     border: Border(bottom: BorderSide(color: Colors.grey[200]))
                                 ),
-                                child: _input(Icon(Icons.lock), 'Пароль', _passwordController, true),
+                                child: _input('Пароль', _passwordController, true),
                               ),
                             ],
                           ),
                         )),
                         SizedBox(height: 40,),
-                        FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
-                        SizedBox(height: 20,),
                         FadeAnimation(1.6, Container(
                             child: RaisedButton(
                               color: Colors.orange[900],
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50)
                               ),
-                              onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
-                                  builder: (context) => SignUp() // Context - текущее окружение, Products - страница с продуктами
+                              onPressed: () => Navigator.of(context).push(MaterialPageRoute(// Навигатор осуществляет переход по страницам
+                              builder: (context) => ProfileFirst() // Context - текущее окружение, Products - страница с продуктами
                               )),
                               child: Center(
-                                child: Text("Пропустить", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                                child: Text("Зарегистрироваться", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                               ),
                             )
                         )),
+                        SizedBox(height: 20,),
+//                        FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
                       ],
                     ),
                   ),
@@ -121,15 +122,16 @@ class _AuthorizationPageState extends State<Login> {
     );
   }
 }
-Widget _input(Icon icon, String hint, TextEditingController controller, bool obscure) {
+
+Widget _input(String hint, TextEditingController controller, bool obscure) {
   return Container(
-    padding: EdgeInsets.only(left: 20, right: 20),
+    //padding: EdgeInsets.only(left: 20, right: 20),
     child: TextField(
       controller: controller,
       obscureText: obscure,
       style: TextStyle(fontSize: 20, color: Colors.white),
       decoration: InputDecoration(
-          hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.black),
+          hintStyle: TextStyle(color: Colors.grey),
           hintText: hint,
           focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white, width: 3)
@@ -137,13 +139,13 @@ Widget _input(Icon icon, String hint, TextEditingController controller, bool obs
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white54, width: 1)
           ),
-          prefixIcon: Padding(
-            padding: EdgeInsets.only(left: 10, right: 10),
-            child: IconTheme(
-              data: IconThemeData(color:  Colors.white),
-              child: icon,
-            ),
-          )
+//          prefixIcon: Padding(
+//            padding: EdgeInsets.only(left: 10, right: 10),
+//            child: IconTheme(
+//              data: IconThemeData(color:  Colors.white),
+//              child: Text(''),
+//            ),
+//          )
       ),
     ),
   );
