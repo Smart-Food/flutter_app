@@ -1,6 +1,5 @@
 import 'package:flutterapp/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/login/profilefirst.dart';
 import 'package:flutterapp/login/signup.dart';
 import 'package:flutterapp/services/auth.dart';
 

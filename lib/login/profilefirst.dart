@@ -59,7 +59,6 @@ class ProfileFirst extends StatelessWidget {
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60))
                 ),
               ),
-
             )
           ],
         ),

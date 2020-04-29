@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/products/productInfo.dart';
 import 'package:flutterapp/products/product.dart';
 import 'dart:convert';
 class Products extends StatefulWidget {
+  final String fileName;
+  const Products ({ Key key, this.fileName }): super(key: key);
   @override
   _ProductsState createState() => _ProductsState();
 }
 
-//var productList = jsonDecode('data.json');
 List<Product> cart = [];
 double sum = 0;
 
@@ -31,9 +31,11 @@ class _ProductsState extends State<Products> {
             },
             itemCount: productList.length,  // количество продуктов
           );
-        }, future: DefaultAssetBundle.of(context).loadString("assets/data.json"), // загрузка
+        }, future: DefaultAssetBundle.of(context).loadString('assets/' + widget.fileName), // загрузка
         ),                                                             // данных из JSON-файла
       ),
     );
   }
 }
+
+//'assets/data.json'

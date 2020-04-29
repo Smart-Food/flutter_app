@@ -30,7 +30,7 @@ class _MenuState extends State<Menu> { // Меню приложения
 
   List<GButton> tabs = new List();
   final List<Widget> _children = [
-    GlobusCatalog(),
+    GlobusCatalog(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
     SmartMaps(),
     //MapsDemo(),
     //AsyncMaps(),
