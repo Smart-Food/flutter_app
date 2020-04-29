@@ -1,7 +1,9 @@
 import 'package:flutterapp/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/login/signup.dart';
-import 'package:flutterapp/services/auth.dart';
+import 'package:flutterapp/domain/user.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'signup.dart';
+import 'auth.dart';
 
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);
@@ -79,14 +81,14 @@ class _AuthorizationPageState extends State<Login> {
                                 decoration: BoxDecoration(
                                     border: Border(bottom: BorderSide(color: Colors.grey[200]))
                                 ),
-                                child: _input('Email', _emailController, false),
+                                child: input('Email', _emailController, false),
                               ),
                               Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     border: Border(bottom: BorderSide(color: Colors.grey[200]))
                                 ),
-                                child: _input('Пароль', _passwordController, true),
+                                child: input('Пароль', _passwordController, true),
                               ),
                             ],
                           ),
@@ -95,18 +97,21 @@ class _AuthorizationPageState extends State<Login> {
                         FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
                         SizedBox(height: 20,),
                         FadeAnimation(1.6, Container(
-                            child: RaisedButton(
-                              color: Colors.orange[900],
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(50)
-                              ),
+                            child: button("Войти", _loginAction, context)
+                        )),
+                        FadeAnimation(1.6, Container(
+                          child: RaisedButton(
+                            color: Colors.orange[900],
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)
+                            ),
                               onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
                                   builder: (context) => SignUp() // Context - текущее окружение, Products - страница с продуктами
                               )),
-                              child: Center(
-                                child: Text("Зарегистрироваться", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-                              ),
-                            )
+                            child: Center(
+                              child: Text("Страница регистрации", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                            ),
+                          ),
                         )),
                       ],
                     ),
@@ -119,14 +124,37 @@ class _AuthorizationPageState extends State<Login> {
       ),
     );
   }
+  void _loginAction() async {
+    _email = _emailController.text;
+    _password = _passwordController.text;
+
+    if (_email.isEmpty || _password.isEmpty) return;
+
+    User user = await _authService.signInWithEmailAndPassword(_email.trim(), _password.trim());
+    if (user == null) {
+      Fluttertoast.showToast(
+          msg: "Ошибка входа",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0
+      );
+    } else {
+      _emailController.clear();
+      _passwordController.clear();
+    }
+  }
 }
-Widget _input(String hint, TextEditingController controller, bool obscure) {
+
+Widget input(String hint, TextEditingController controller, bool obscure) {
   return Container(
     //padding: EdgeInsets.only(left: 20, right: 20),
     child: TextField(
       controller: controller,
       obscureText: obscure,
-      style: TextStyle(fontSize: 20, color: Colors.white),
+      style: TextStyle(fontSize: 20, color: Colors.black),
       decoration: InputDecoration(
           hintStyle: TextStyle(color: Colors.grey),
           hintText: hint,
@@ -148,7 +176,20 @@ Widget _input(String hint, TextEditingController controller, bool obscure) {
   );
 }
 
-
+Widget button(String text, void func(), context) {
+  return RaisedButton(
+    splashColor: Theme.of(context).primaryColor,
+    highlightColor: Theme.of(context).primaryColor,
+    color: Colors.white,
+    child: Text(
+        text,
+        style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20)
+    ),
+    onPressed: () {
+      func();
+    },
+  );
+}
 
 
 //import 'package:flutter/material.dart';
@@ -178,12 +219,6 @@ Widget _input(String hint, TextEditingController controller, bool obscure) {
 //  @override
 //  Widget build(BuildContext context) {
 //
-//    Widget _logo() {
-//      return Padding(
-//          padding: EdgeInsets.only(top: 35)
-//      );
-//    }
-//
 //    Widget _button(String text, void func(), context) {
 //      return RaisedButton(
 //        splashColor: Theme.of(context).primaryColor,
@@ -198,8 +233,6 @@ Widget _input(String hint, TextEditingController controller, bool obscure) {
 //        },
 //      );
 //    }
-//
-
 //
 //
 //    Widget _form(String label, void func()) {
@@ -260,7 +293,7 @@ Widget _input(String hint, TextEditingController controller, bool obscure) {
 //      User user = await _authService.registerWithEmailAndPassword(_email.trim(), _password.trim());
 //      if (user == null) {
 //        Fluttertoast.showToast(
-//            msg: "Ошибка рецистрации",
+//            msg: "Ошибка регистрации",
 //            toastLength: Toast.LENGTH_SHORT,
 //            gravity: ToastGravity.CENTER,
 //            timeInSecForIosWeb: 1,
