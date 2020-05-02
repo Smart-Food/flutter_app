@@ -1,22 +1,13 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutterapp/products/product.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
 import 'package:flutterapp/products/productList.dart';
 
 
 class ProductInfo extends StatefulWidget {
 
-  String name,
-      brand,
-      picture;
-  double price ,
-      value,
-      oldPrice;
-  int id, num;
-  ProductInfo({ Key key,
-    this.name, this.id, this.oldPrice, this.picture,
-    this.value, this.price, this.brand, this.num = 0
-}):super(key:key);
+  Product product;
+  ProductInfo({ Key key,this.product}):super(key:key);
   @override
   _ProductInfoState createState() => _ProductInfoState();
 }
@@ -30,18 +21,14 @@ class _ProductInfoState extends State<ProductInfo> {
     cart.forEach((item){
       totalCount = totalCount + item.num;
     });
+    Product prod = widget.product;
     return Scaffold(
-      key: Key(widget.num.toString()),
+      key: Key(prod.num.toString()),
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.blue,
-        title: Text('Продукт ' + widget.id.toString()),
+        title: Text(prod.name),
         actions: <Widget>[
-          new IconButton(
-              icon: Icon(
-                Icons.search,
-                color: Colors.white,
-              ), onPressed: () {}),
           Stack(
 
             children: <Widget>[
@@ -85,7 +72,7 @@ class _ProductInfoState extends State<ProductInfo> {
             child: GridTile(
               child: Container(
                 color: Colors.white,
-                child: Image.network(widget.picture),
+                child: Image.network(prod.picture),
                 //child: Text('Цена: ' + widget.price.toString()),
               )),
             height: 300.0,
@@ -96,19 +83,21 @@ class _ProductInfoState extends State<ProductInfo> {
             color: Colors.white,
             child: Text('Добавить в корзину'),
             //style : TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20),
-            onPressed: () {setState((){
-              if(cart.contains(widget)){
-                widget.num += 1;
+            onPressed: () { setState((){
+              if(cart.contains(prod)){
+                prod.num += 1;
               }
               else {
-                cart.add(widget); //update
-                widget.num = 1;
+                cart.add(prod); //update
+                prod.num = 1;
               }
               sum = 0;
               cart.forEach((item){
                 sum = sum + item.num*item.price;
 
               });});
+                //var bloc = Provider.of<Cart>(context, listen: false);
+                //bloc.addToCart(widget);
             },
           )
         ],
