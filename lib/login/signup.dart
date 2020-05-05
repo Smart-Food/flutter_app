@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/domain/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'config.dart';
 import 'login.dart';
 import 'auth.dart';
 
@@ -31,25 +32,21 @@ class SignUpState extends State<SignUp> {
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
-                colors: [
-                  Colors.purple[900],
-                  Colors.purple[800],
-                  Colors.purple[400]
-                ]
+                colors: signupColors
             )
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: start,
           children: <Widget>[
-            SizedBox(height: 40,),
+            SizedBox(height: 40),
             Padding(
               padding: EdgeInsets.all(20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: start,
                 children: <Widget>[
-                  FadeAnimation(1, Text("Регистрация", style: TextStyle(color: Colors.white, fontSize: 40),)),
+                  FadeAnimation(1, Text("Регистрация", style: TextStyle(color: Colors.white, fontSize: 40))),
                   SizedBox(height: 10,),
-                  FadeAnimation(1.3, Text("Введите логин, email и пароль", style: TextStyle(color: Colors.white, fontSize: 18),)),
+                  FadeAnimation(1.3, Text("Введите логин, email и пароль", style: TextStyle(color: white, fontSize: 18))),
                 ],
               ),
             ),
@@ -57,7 +54,7 @@ class SignUpState extends State<SignUp> {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: white,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60))
                 ),
                 child: SingleChildScrollView(
@@ -68,10 +65,10 @@ class SignUpState extends State<SignUp> {
                         SizedBox(height: 20,),
                         FadeAnimation(1.4, Container(
                           decoration: BoxDecoration(
-                              color: Colors.white,
+                              color: white,
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [BoxShadow(
-                                  color: Color.fromRGBO(225, 95, 27, .3),
+                                  color: shadowColor,
                                   blurRadius: 20,
                                   offset: Offset(0, 10)
                               )]
@@ -95,23 +92,23 @@ class SignUpState extends State<SignUp> {
                             ],
                           ),
                         )),
-                        SizedBox(height: 40,),
+                        SizedBox(height: 40),
                         FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
-                        SizedBox(height: 20,),
+                        SizedBox(height: 20),
                         FadeAnimation(1.6, Container(
                             child: _button("Зарегистрироваться", _registerAction, context),
                         )),
                         FadeAnimation(1.6, Container(
                           child: RaisedButton(
-                            color: Colors.orange[900],
+                            color: orange,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50)
                             ),
-                            onPressed: () => Navigator.of(context).push(MaterialPageRoute( // Навигатор осуществляет переход по страницам
-                                builder: (context) => Login() // Context - текущее окружение, Products - страница с продуктами
+                            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Login()
                             )),
                             child: Center(
-                              child: Text("Страница авторизации", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                              child: Text("Страница авторизации", style: TextStyle(color: white, fontWeight: bold)),
                             ),
                           ),
                         )),
@@ -139,8 +136,8 @@ class SignUpState extends State<SignUp> {
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 1,
-          backgroundColor: Colors.red,
-          textColor: Colors.white,
+          backgroundColor: red,
+          textColor: white,
           fontSize: 16.0
       );
     } else {
@@ -152,43 +149,15 @@ class SignUpState extends State<SignUp> {
 
 Widget _button(String text, void func(), context) {
   return RaisedButton(
-    splashColor: Theme.of(context).primaryColor,
-    highlightColor: Theme.of(context).primaryColor,
+    splashColor: blue,
+    highlightColor: blue,
     color: Colors.white,
     child: Text(
         text,
-        style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor, fontSize: 20)
+        style: TextStyle(fontWeight: bold, color: blue, fontSize: 20)
     ),
     onPressed: () {
       func();
     },
   );
 }
-
-//Widget _input(String hint, TextEditingController controller, bool obscure) {
-//  return Container(
-//    //padding: EdgeInsets.only(left: 20, right: 20),
-//    child: TextField(
-//      controller: controller,
-//      obscureText: obscure,
-//      style: TextStyle(fontSize: 20, color: Colors.black),
-//      decoration: InputDecoration(
-//        hintStyle: TextStyle(color: Colors.grey),
-//        hintText: hint,
-//        focusedBorder: OutlineInputBorder(
-//            borderSide: BorderSide(color: Colors.white, width: 3)
-//        ),
-//        enabledBorder: OutlineInputBorder(
-//            borderSide: BorderSide(color: Colors.white54, width: 1)
-//        ),
-////          prefixIcon: Padding(
-////            padding: EdgeInsets.only(left: 10, right: 10),
-////            child: IconTheme(
-////              data: IconThemeData(color:  Colors.white),
-////              child: Text(''),
-////            ),
-////          )
-//      ),
-//    ),
-//  );
-//}
