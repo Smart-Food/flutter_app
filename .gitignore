@@ -21,4 +21,15 @@ doc/api/
 *.js.deps
 *.js.map
 
+
+.idea/flutter_app.iml
+
+*.xml
+.idea
+
 build
+
+
+.flutter-plugins
+
+.flutter-plugins-dependencies
