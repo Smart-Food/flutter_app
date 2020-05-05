@@ -1,171 +1,163 @@
+import 'package:flutterapp/Animation/FadeAnimation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/login/SizeConfig.dart';
-import 'package:flutterapp/login/login.dart';
+import 'package:flutterapp/domain/user.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class SignupApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return OrientationBuilder(
-          builder: (context, orientation) {
-            SizeConfig().init(constraints, orientation);
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'HomeScreen App',
-              home: SignUp(),
-            );
-          },
-        );
-      },
-    );
-  }
-}
+import 'config.dart';
+import 'login.dart';
+import 'auth.dart';
 
 class SignUp extends StatefulWidget {
-  SignUp({Key key, this.title}) : super(key: key);
-
-
-  final String title;
+  SignUp({Key key}) : super(key: key);
 
   @override
-  _SignUpState createState() => _SignUpState();
+  SignUpState createState() => SignUpState();
 }
 
-class _SignUpState extends State<SignUp> {
+class SignUpState extends State<SignUp> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  String _email;
+  String _password;
+  bool showLogin = true;
+
+  AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: 15 * SizeConfig.heightMultiplier,),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(25.0),
-                child: Image.asset("assets/creatingprofile.png", fit: BoxFit.cover, height: 150.0, width: 150.0,),
-              ),
-              SizedBox(height: 5 * SizeConfig.heightMultiplier,),
-              Text("Sign Up", style: TextStyle(
-                  color: Colors.blueGrey,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 4 * SizeConfig.textMultiplier
-              ),),
-              SizedBox(height: 3 * SizeConfig.heightMultiplier,),
-              Padding(
-                padding: const EdgeInsets.only(left: 50.0, right: 50.0),
-                child: Text("Зарегистрируйтесь используя email и пароль для приложения",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontSize: 2 * SizeConfig.textMultiplier
-                  ),),
-              ),
-              SizedBox(height: 3 * SizeConfig.heightMultiplier,),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                child: TextFormField(
-                  decoration: new InputDecoration(
-                      labelText: "E-mail..",
-                      fillColor: Colors.white,
-                      border: new OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(15.0),
-                          borderSide: new BorderSide(
-                              color: Colors.blueGrey
-                          )
-                      )
-                  ),
-                  validator: (val){
-                    if(val.length ==0){
-                      return "Email не должен быть пустым";
-                    }
-                    else {
-                      return null;
-                    }
-                  },
-                  keyboardType: TextInputType.emailAddress,
-                  style: new TextStyle(
-                      color: Colors.blueGrey
-                  ),
-                ),
-              ),
-              SizedBox(height: 3 * SizeConfig.heightMultiplier,),
-              Padding(
-                padding: const EdgeInsets.only(left: 20.0, right: 20.0),
-                child: TextFormField(
-                  decoration: new InputDecoration(
-                      labelText: "Пароль..",
-                      fillColor: Colors.white,
-                      border: new OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(15.0),
-                          borderSide: new BorderSide(
-                              color: Colors.blueGrey
-                          )
-                      )
-                  ),
-                  validator: (val){
-                    if(val.length ==0){
-                      return "Пароль не должен быть пустым";
-                    }
-                    else {
-                      return null;
-                    }
-                  },
-                  keyboardType: TextInputType.visiblePassword,
-                  style: new TextStyle(
-                      color: Colors.blueGrey
-                  ),
-                ),
-              ),
-              SizedBox(height: 5 * SizeConfig.heightMultiplier,),
-              Padding(
-                padding: const EdgeInsets.only(left: 40.0, right: 40.0),
-                child: Container(
-                  height: 7 * SizeConfig.heightMultiplier,
-                  decoration: BoxDecoration(
-                      color: Colors.yellow[600],
-                      borderRadius: BorderRadius.circular(20.0)
-                  ),
-                  child: Center(
-                    child: Text("Создать аккаунт", style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold
-                    ),),
-                  ),
-                ),
-              ),
-              SizedBox(height: 2 * SizeConfig.heightMultiplier,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                colors: signupColors
+            )
+        ),
+        child: Column(
+          crossAxisAlignment: start,
+          children: <Widget>[
+            SizedBox(height: 40),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: start,
                 children: <Widget>[
-                  Text("Уже есть аккаунт?", style: TextStyle(
-                      color: Colors.blueGrey,
-                      fontSize: 1.7 * SizeConfig.textMultiplier
-                  ),),
-                  SizedBox(width: 1 * SizeConfig.widthMultiplier,),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context)=> Login()));
-                    },
-                    child: Text("Войдите", style: TextStyle(
-                        color: Colors.blue[600],
-                        fontSize: 1.7 * SizeConfig.textMultiplier
-                    ),),
-                  ),
+                  FadeAnimation(1, Text("Регистрация", style: TextStyle(color: Colors.white, fontSize: 40))),
+                  SizedBox(height: 10,),
+                  FadeAnimation(1.3, Text("Введите логин, email и пароль", style: TextStyle(color: white, fontSize: 18))),
                 ],
-              )
-            ],
-          ),
+              ),
+            ),
+            SizedBox(height: 30),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                    color: white,
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60))
+                ),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.all(30),
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(height: 20,),
+                        FadeAnimation(1.4, Container(
+                          decoration: BoxDecoration(
+                              color: white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [BoxShadow(
+                                  color: shadowColor,
+                                  blurRadius: 20,
+                                  offset: Offset(0, 10)
+                              )]
+                          ),
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    border: Border(bottom: BorderSide(color: Colors.grey[200]))
+                                ),
+                                child: input('Email', _emailController, false),
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                    border: Border(bottom: BorderSide(color: Colors.grey[200]))
+                                ),
+                                child: input('Пароль', _passwordController, true),
+                              ),
+                            ],
+                          ),
+                        )),
+                        SizedBox(height: 40),
+                        FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
+                        SizedBox(height: 20),
+                        FadeAnimation(1.6, Container(
+                            child: _button("Зарегистрироваться", _registerAction, context),
+                        )),
+                        FadeAnimation(1.6, Container(
+                          child: RaisedButton(
+                            color: orange,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)
+                            ),
+                            onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Login()
+                            )),
+                            child: Center(
+                              child: Text("Страница авторизации", style: TextStyle(color: white, fontWeight: bold)),
+                            ),
+                          ),
+                        )),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ),
-
     );
   }
+  void _registerAction() async {
+    _email = _emailController.text;
+    _password = _passwordController.text;
+
+    if (_email.isEmpty || _password.isEmpty) return;
+
+    User user = await _authService.registerWithEmailAndPassword(_email.trim(), _password.trim());
+    if (user == null) {
+      Fluttertoast.showToast(
+          msg: "Ошибка регистрации",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: red,
+          textColor: white,
+          fontSize: 16.0
+      );
+    } else {
+      _emailController.clear();
+      _passwordController.clear();
+    }
+  }
+}
+
+Widget _button(String text, void func(), context) {
+  return RaisedButton(
+    splashColor: blue,
+    highlightColor: blue,
+    color: Colors.white,
+    child: Text(
+        text,
+        style: TextStyle(fontWeight: bold, color: blue, fontSize: 20)
+    ),
+    onPressed: () {
+      func();
+    },
+  );
 }
