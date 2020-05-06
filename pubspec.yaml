@@ -27,12 +27,6 @@ dependencies:
   rxdart: any
   geoflutterfire: ^2.1.0
   location: ^3.0.2
-
-  flutter_map: 0.8.2
-  latlong: 0.6.1
-
-  mapbox_gl:
-  flutter_mapbox_navigation: ^0.0.10
   #font_awesome_flutter: ^8.8.1
   gradient_text: ^1.0.2
   stripe_payment: ^1.0.7
@@ -75,6 +69,28 @@ flutter:
     - assets/orderFoodOnline.jpg
     - assets/onlineMenu.jpg
     - assets/restaurantsNearMe.jpg
+    - assets/globusCatalog/globusPng/Собственное производство.png
+    - assets/globusCatalog/globusPng/Наши марки.png
+    - assets/globusCatalog/globusPng/Эксклюзивный алкоголь.png
+    - assets/globusCatalog/globusPng/Здоровый выбор.png
+    - assets/globusCatalog/globusPng/Молочные продукты, сыр, яйца.png
+    - assets/globusCatalog/globusPng/Мясо, рыба, кулинария.png
+    - assets/globusCatalog/globusPng/Овощи, фрукты, зелень.png
+    - assets/globusCatalog/globusPng/Хлеб, кондитерские изделия.png
+    - assets/globusCatalog/globusPng/Бакалея.png
+    - assets/globusCatalog/globusPng/Замороженные продукты.png
+    - assets/globusCatalog/globusPng/Напитки.png
+    - assets/globusCatalog/globusPng/Алкоголь.png
+    - assets/globusCatalog/globusPng/Косметика и гигиена.png
+    - assets/globusCatalog/globusPng/Детские товары.png
+    - assets/globusCatalog/globusPng/Уборка, бытовая химия.png
+    - assets/globusCatalog/globusPng/Дом, хобби, техника.png
+    - assets/globusCatalog/globusPng/Товары для животных.png
+    - assets/globusCatalog/globusPng/Всё для автомобиля и дачи.png
+    - assets/globusCatalog/globusPng/Канцтовары и печатная продукция.png
+    - assets/globusCatalog/globusPng/Гардероб и текстиль.png
+    - assets/globusCatalog/globusPng/Новинки.png
+    - assets/globusCatalog/globusPng/Всё для сада и огорода.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

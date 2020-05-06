@@ -4,34 +4,33 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutterapp/catalog/globus/globus.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutterapp/payments/main.dart';
-import 'maps/main.dart';
-import 'package:flutterapp/login/profileMenu.dart';
+import 'package:flutterapp/catalog/globus/globusPages/globusCatalog.dart';
+import 'package:flutterapp/products/productList.dart';
 
-Color appColor = Colors.green;
-Color appColor50 = Colors.green[50];
-
-class Menu extends StatefulWidget {
-  Menu({Key key, this.title}) : super(key: key);
+class GlobusMenu extends StatefulWidget {
+  GlobusMenu({Key key, this.title}) : super(key: key);
 
 
   final String title;
 
   @override
-  _MenuState createState() => _MenuState();
+  _GlobusMenuState createState() => _GlobusMenuState();
 }
 
-class _MenuState extends State<Menu> { // Меню приложения
+int globusPosition = 0;
 
-  int selectedIndex = 0;
+class _GlobusMenuState extends State<GlobusMenu> { // Меню приложения
+
+  int selectedIndex = 3;
 
   PageController controller = PageController();
 
   List<GButton> tabs = new List();
   final List<Widget> _children = [
-    Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
-    SmartMaps(),
-    Payment(),
-    ProfileMenu(),
+    GlobusCatalog(),
+    Products(fileName: 'data.json'),
+    Products(fileName: 'alcohol.json'),
+    Products(fileName: 'alcohol.json'),
   ];
 
   @override
@@ -43,10 +42,10 @@ class _MenuState extends State<Menu> { // Меню приложения
 
     tabs.add(GButton(
       gap: gap,
-      iconActiveColor: appColor,
-      iconColor: appColor,
-      textColor: appColor,
-      color: appColor50,
+      iconActiveColor: Colors.green,
+      iconColor: Colors.green,
+      textColor: Colors.green,
+      color: Colors.green[50],
       iconSize: 24,
       padding: padding,
       icon: LineIcons.home,
@@ -56,10 +55,10 @@ class _MenuState extends State<Menu> { // Меню приложения
 
     tabs.add(GButton(
       gap: gap,
-      iconActiveColor: appColor,
-      iconColor: appColor,
-      textColor: appColor,
-      color: appColor50,
+      iconActiveColor: Colors.green,
+      iconColor: Colors.green,
+      textColor: Colors.green,
+      color: Colors.green[50],
       iconSize: 24,
       padding: padding,
       icon: LineIcons.map,
@@ -69,10 +68,10 @@ class _MenuState extends State<Menu> { // Меню приложения
 
     tabs.add(GButton(
       gap: gap,
-      iconActiveColor: appColor,
-      iconColor: appColor,
-      textColor: appColor,
-      color: appColor50,
+      iconActiveColor: Colors.green,
+      iconColor: Colors.green,
+      textColor: Colors.green,
+      color: Colors.green[50],
       iconSize: 24,
       padding: padding,
       icon: LineIcons.credit_card,
@@ -82,10 +81,10 @@ class _MenuState extends State<Menu> { // Меню приложения
 
     tabs.add(GButton(
       gap: gap,
-      iconActiveColor: appColor,
-      iconColor: appColor,
-      textColor: appColor,
-      color: appColor50,
+      iconActiveColor: Colors.green,
+      iconColor: Colors.green,
+      textColor: Colors.green,
+      color: Colors.green[50],
       iconSize: 24,
       padding: padding,
       icon: LineIcons.user,
@@ -108,9 +107,9 @@ class _MenuState extends State<Menu> { // Меню приложения
           },
           controller: controller,
           itemBuilder: (context, position) {
-            return Container(child: _children[position],);
+            return Container(child: _children[globusPosition],);
           },
-          itemCount: tabs.length, // Can be null
+          itemCount: 1, // Can be null
         ),
         bottomNavigationBar: SafeArea(
           child: Container(
@@ -133,6 +132,7 @@ class _MenuState extends State<Menu> { // Меню приложения
             ),
           ),
         ),
+
       ),
     );
   }

@@ -1,8 +1,7 @@
-import 'package:flutterapp/Animation/FadeAnimation.dart';
+import 'package:flutterapp/animation/fadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/domain/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'config.dart';
 import 'signup.dart';
 import 'auth.dart';
 
@@ -30,21 +29,25 @@ class _AuthorizationPageState extends State<Login> {
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
-                colors: loginColors
+                colors: [
+                  Colors.orange[900],
+                  Colors.orange[800],
+                  Colors.orange[400]
+                ]
             )
         ),
         child: Column(
-          crossAxisAlignment: start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 80),
+            SizedBox(height: 80,),
             Padding(
               padding: EdgeInsets.all(20),
               child: Column(
-                crossAxisAlignment: start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  FadeAnimation(1, Text("Вход", style: TextStyle(color: white, fontSize: 40))),
-                  SizedBox(height: 10),
-                  FadeAnimation(1.3, Text("Добро пожаловать домой", style: TextStyle(color: white, fontSize: 18),)),
+                  FadeAnimation(1, Text("Вход", style: TextStyle(color: Colors.white, fontSize: 40),)),
+                  SizedBox(height: 10,),
+                  FadeAnimation(1.3, Text("Добро пожаловать домой", style: TextStyle(color: Colors.white, fontSize: 18),)),
                 ],
               ),
             ),
@@ -52,7 +55,7 @@ class _AuthorizationPageState extends State<Login> {
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                    color: white,
+                    color: Colors.white,
                     borderRadius: BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60))
                 ),
                 child: SingleChildScrollView(
@@ -60,13 +63,13 @@ class _AuthorizationPageState extends State<Login> {
                     padding: EdgeInsets.all(30),
                     child: Column(
                       children: <Widget>[
-                        SizedBox(height: 20),
+                        SizedBox(height: 20,),
                         FadeAnimation(1.4, Container(
                           decoration: BoxDecoration(
-                              color: white,
+                              color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [BoxShadow(
-                                  color: shadowColor,
+                                  color: Color.fromRGBO(225, 95, 27, .3),
                                   blurRadius: 20,
                                   offset: Offset(0, 10)
                               )]
@@ -76,29 +79,29 @@ class _AuthorizationPageState extends State<Login> {
                               Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: grey))
+                                    border: Border(bottom: BorderSide(color: Colors.grey[200]))
                                 ),
                                 child: input('Email', _emailController, false),
                               ),
                               Container(
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
-                                    border: Border(bottom: BorderSide(color: grey))
+                                    border: Border(bottom: BorderSide(color: Colors.grey[200]))
                                 ),
                                 child: input('Пароль', _passwordController, true),
                               ),
                             ],
                           ),
                         )),
-                        SizedBox(height: 15),
-                        FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: blue))),
-                        SizedBox(height: 15),
+                        SizedBox(height: 40,),
+                        FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
+                        SizedBox(height: 20,),
                         FadeAnimation(1.6, Container(
                             child: button("Войти", _loginAction, context)
                         )),
                         FadeAnimation(1.6, Container(
                           child: RaisedButton(
-                            color: orange,
+                            color: Colors.orange[900],
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50)
                             ),
@@ -106,7 +109,7 @@ class _AuthorizationPageState extends State<Login> {
                                   builder: (context) => SignUp() // Context - текущее окружение, Products - страница с продуктами
                               )),
                             child: Center(
-                              child: Text("Страница регистрации", style: TextStyle(color: white, fontWeight: bold)),
+                              child: Text("Страница регистрации", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
                             ),
                           ),
                         )),
