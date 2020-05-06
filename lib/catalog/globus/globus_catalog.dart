@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/catalog/globus/alcohol.dart';
 import 'package:flutterapp/catalog/globus/breads.dart';
 import 'package:flutterapp/catalog/globus/house.dart';
+import 'package:flutterapp/maps/full_map.dart';
 import 'package:flutterapp/products/product.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
@@ -86,7 +87,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with SingleTickerProvider
                   Container( // иконка меню магазинов
                     child: IconButton(
                         onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ShoppingCart(cart)
+                            builder: (context) => FullMapPage()
                         )),
                         icon: Icon(Icons.menu),
                         color: Colors.black

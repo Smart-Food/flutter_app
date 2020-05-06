@@ -28,6 +28,12 @@ dependencies:
   rxdart: any
   geoflutterfire: ^2.1.0
   location: ^3.0.2
+
+  flutter_map: 0.8.2
+  latlong: 0.6.1
+
+  mapbox_gl:
+  flutter_mapbox_navigation: ^0.0.10
   #font_awesome_flutter: ^8.8.1
   gradient_text: ^1.0.2
 
