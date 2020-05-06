@@ -31,7 +31,9 @@ class ProductState extends State<Product> {
             child: Material(
               child: InkWell(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ProductInfo(product: Product(
+                    builder: (context) => ProductInfo
+                      (product:
+                    Product(
                       name: widget.name, id:widget.id, picture: widget.picture,
                       value: widget.value, brand: widget.brand,
                       oldPrice: widget.oldPrice, price: widget.price,)

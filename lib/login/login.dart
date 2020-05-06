@@ -77,14 +77,14 @@ class _AuthorizationPageState extends State<Login> {
                           child: Column(
                             children: <Widget>[
                               Container(
-                                padding: EdgeInsets.all(10),
+                                //padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     border: Border(bottom: BorderSide(color: Colors.grey[200]))
                                 ),
                                 child: input('Email', _emailController, false),
                               ),
                               Container(
-                                padding: EdgeInsets.all(10),
+                                padding: EdgeInsets.only(top: 10),
                                 decoration: BoxDecoration(
                                     border: Border(bottom: BorderSide(color: Colors.grey[200]))
                                 ),
@@ -93,9 +93,9 @@ class _AuthorizationPageState extends State<Login> {
                             ],
                           ),
                         )),
-                        SizedBox(height: 40,),
-                        FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
                         SizedBox(height: 20,),
+                        FadeAnimation(1.5, Text("Забыли пароль?", style: TextStyle(color: Colors.blue),)),
+                        SizedBox(height: 15,),
                         FadeAnimation(1.6, Container(
                             child: button("Войти", _loginAction, context)
                         )),

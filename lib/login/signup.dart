@@ -53,7 +53,7 @@ class SignUpState extends State<SignUp> {
                 ],
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 60),
             Expanded(
               child: Container(
                 decoration: BoxDecoration(

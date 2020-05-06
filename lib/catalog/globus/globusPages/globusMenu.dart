@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/maps/main.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutterapp/catalog/globus/globus.dart';
 import 'package:line_icons/line_icons.dart';

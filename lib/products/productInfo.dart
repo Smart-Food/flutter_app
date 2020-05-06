@@ -122,7 +122,7 @@ class _ProductInfoState extends State<ProductInfo> {
                     Text(
                       prod.name,
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 35.0,
                         fontWeight: FontWeight.w600,
                         letterSpacing: 1.2,
@@ -133,13 +133,13 @@ class _ProductInfoState extends State<ProductInfo> {
                         Icon(
                           FontAwesomeIcons.info,
                           size: 15.0,
-                          color: Colors.white70,
+                          color: Colors.black,
                         ),
                         SizedBox(width: 5.0),
                         Text(
                           prod.name,
                           style: TextStyle(
-                            color: Colors.white70,
+                            color: Colors.black,
                             fontSize: 20.0,
                           ),
                         ),
@@ -207,7 +207,7 @@ class _ProductInfoState extends State<ProductInfo> {
                                       ),
                                     ),
                                     Text(
-                                      'per pax',
+                                      'за штуку',
                                       style: TextStyle(
                                         color: Colors.grey,
                                       ),

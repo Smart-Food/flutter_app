@@ -266,8 +266,13 @@ class _ShoppingCartState extends State<ShoppingCart> {
             FadeAnimation(
               2.0,
               MaterialButton(
-                onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Payment())),
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Payment()));
+                  setState(() {
+                    cart;
+                  });
+                },
                 color: Colors.green,
                 height: 50.0,
                 minWidth: double.infinity,

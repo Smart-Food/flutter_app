@@ -1,10 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutterapp/products/product.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
 import 'package:flutterapp/catalog/globus/globusPages/globusMain.dart';
 import 'package:flutterapp/catalog/globus/globusPages/globusCatalog.dart';
 import 'package:flutterapp/catalog/globus/globusPages/globusMenu.dart';
 import 'package:flutterapp/menu.dart';
+
+import '../searchPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -191,6 +196,17 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
     );
   }
 
+//  FutureBuilder(builder: (context, snapshot){
+//  var productList1=json.decode(snapshot.data.toString());
+//  List<Product> productList = [];
+//  productList1.forEach((item) {
+//  productList.add(Product(name: item['name'],brand: item['name'],price: item['price'],picture: item['picture'],));
+//  });
+
+
+//  },future: DefaultAssetBundle.of(context).loadString("assets/data.json"),
+//    ));
+
   Widget Dashboard(context) {
     return AnimatedPositioned(
       duration: duration,
@@ -205,7 +221,12 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
             borderRadius: BorderRadius.all(Radius.circular(40)),
             elevation: 8,
             color: Colors.white,
-            child: Column(
+            child: FutureBuilder(builder: (context, snapshot){
+            var productList1 = json.decode(snapshot.data.toString());
+              List<Product> productList = [];
+              productList1.forEach((item) {
+               productList.add(Product(name: item['name'],brand: item['name'],price: item['price'],picture: item['picture'],));
+            }); return Column(
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
@@ -226,7 +247,9 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                             });
                           },
                         ),
-                        Container(
+                        SizedBox(width: 10,),
+                        GestureDetector(
+                          child: Container(
                           width: MediaQuery.of(context).size.width*0.65,
                           height: 50.0,
                           decoration: BoxDecoration(
@@ -238,7 +261,6 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                             padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                             child: Row(
                               children: <Widget>[
-
                                 Text("Поиск", style: TextStyle( // текст поисковой строки и его параметры
                                     color: Colors.grey,
                                     fontSize: 16.8,
@@ -246,13 +268,15 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                                 ),
                                 ),
                                 Spacer(),
-//                            IconButton(
-//                              icon: Icon(Icons.search, color: Colors.black, size: 24),
-//                              onPressed: () {showSearch(context: context, delegate: ProductSearch(productList));},
-//                            ) // иконка поисковой строки // M
+                            IconButton(
+                              icon: Icon(Icons.search, color: Colors.black, size: 24),
+                              onPressed: () {showSearch(context: context, delegate: ProductSearch(productList));},
+                            ) // иконка поисковой строки // M
                               ],
                             ),
                           ),
+                        ),
+                          onTap: () {showSearch(context: context, delegate: ProductSearch(productList));},
                         ),
                         Spacer(),
                         Stack( // иконка корзины
@@ -337,9 +361,10 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                     ),
                   )
                 ]
-            )
+            );
+            },future: DefaultAssetBundle.of(context).loadString("assets/data.json"),
+    ))
         ),
-      ),
-    );
+      );
   }
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/maps/main.dart';
+import 'package:flutterapp/catalog/globus/globusPages/globusMain.dart';
+import 'package:flutterapp/maps/full_map.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutterapp/catalog/globus/globus.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutterapp/payments/main.dart';
-import 'maps/main.dart';
 import 'package:flutterapp/login/profileMenu.dart';
 
 Color appColor = Colors.green;
@@ -29,7 +29,7 @@ class _MenuState extends State<Menu> { // Меню приложения
   List<GButton> tabs = new List();
   final List<Widget> _children = [
     Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
-    SmartMaps(),
+    FullMapPage(),
     Payment(),
     ProfileMenu(),
   ];
