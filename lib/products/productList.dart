@@ -7,7 +7,6 @@ class Products extends StatefulWidget {
   @override
   _ProductsState createState() => _ProductsState();
 }
-
 List<Product> cart = [];
 double sum = 0;
 

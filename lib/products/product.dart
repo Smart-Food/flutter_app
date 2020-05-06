@@ -43,7 +43,6 @@ class ProductState extends State<Product> {
                       cart.add(widget); //update
                       widget.num = 1;
                     }
-                    sum += widget.price;
                     });}
                   ),
                   leading: Image.network(widget.picture),

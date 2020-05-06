@@ -2,6 +2,11 @@ import 'dart:collection';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutterapp/catalog/globus/alcohol.dart';
+import 'package:flutterapp/catalog/globus/breads.dart';
+import 'package:flutterapp/catalog/globus/house.dart';
+import 'package:flutterapp/maps/full_map.dart';
+import 'package:flutterapp/products/product.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
 import 'package:flutterapp/catalog/globus/globusMain/globusMain.dart';
@@ -59,7 +64,6 @@ class _GlobusCatalogState extends State<GlobusCatalog> with TickerProviderStateM
     _slideAnimation = Tween<Offset>(begin: Offset(-1, 0), end: Offset(0, 0)).animate(_controller);
     tabController = TabController(length: 4, vsync: this); // Количество разделов в каталоге
   }
-
   @override
   void dispose() {
     _controller.dispose();
@@ -72,6 +76,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with TickerProviderStateM
     cart.forEach((item){
       totalCount = totalCount + item.num;
     });
+
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -141,6 +146,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> with TickerProviderStateM
                         )),
                       )
                   ),
+
                 ),
                 SizedBox(height: 10),
                 RaisedButton(
