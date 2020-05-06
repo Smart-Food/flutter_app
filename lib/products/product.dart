@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/productInfo.dart';
 import 'package:flutterapp/products/productList.dart';
+import 'package:flutterapp/animation/fadeAnimation.dart';
 
 class Product extends StatefulWidget {
   String name,
@@ -22,53 +23,168 @@ class Product extends StatefulWidget {
 class ProductState extends State<Product> {
   @override
   Widget build(BuildContext context) {
-    var prodHeight = MediaQuery.of(context).size.height * 0.198;
-//    var prodWidth = prodHeight * 0.5;
     return Card(
-      child: Hero(
-          tag: widget.id,
-          child: Material(
-            child: InkWell(
-              child: Container(
-                height: prodHeight,
-                child: ListTile(
-                  trailing: IconButton(
-                  icon: Icon(Icons.add), iconSize: 30,
-                  tooltip: 'Добавить в корзину',
-                  onPressed: () { setState((){
-                    if(cart.contains(widget)){
-                      widget.num += 1;
-                    }
-                    else {
-                      cart.add(widget); //update
-                      widget.num = 1;
-                    }
-                    });}
+      child: FadeAnimation(
+        1,
+        Hero(
+            tag: widget.id,
+            child: Material(
+              child: InkWell(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ProductInfo(product: Product(
+                      name: widget.name, id:widget.id, picture: widget.picture,
+                      value: widget.value, brand: widget.brand,
+                      oldPrice: widget.oldPrice, price: widget.price,)
+                    )
+                )),
+                child: Container(
+                  height: 150.0,
+                  width: 350.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
-                  leading: Image.network(widget.picture),
-                  title: Text(
-                    widget.name + '\n' +  widget.price.toString() + 'р',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.w800, fontSize: 20),
+                  child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(3.0),
+                                  child: Image.network(
+                                    widget.picture,
+                                    height: 60.0,
+                                    width: 60.0,),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          FadeAnimation(
+                                            1.5,
+                                            Text(
+                                              widget.name,
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 12.0),
+                                            ),
+                                          ),
+                                          Spacer(),
+                                          FadeAnimation(
+                                            1.5,
+                                              Icon(
+                                                Icons.favorite_border,
+                                                color: Colors.red,
+                                                size: 20.0,
+                                              )
+                                          )
+                                        ],
+                                      ),
+                                      FadeAnimation(
+                                        1.75,
+                                        Text(
+                                          widget.price.toString() + "р.",
+                                          style: TextStyle(
+                                              color: Colors.black, fontSize: 14.0),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 3.0,
+                                      ),
+                                      FadeAnimation(
+                                        2.0,
+                                          Row(
+                                            children: <Widget>[
+                                              Text(
+                                                widget.oldPrice.toString() + "р.",
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 12.0,
+                                                    decoration: TextDecoration.lineThrough
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 3.0,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 75.0),
+                            child: Row(
+                              children: <Widget>[
+                                Container(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: Row(
+                                      children: <Widget>[
+                                        FlatButton(
+                                          onPressed: () { setState((){
+                                            if(cart.contains(widget)){
+                                              widget.num += 1;
+                                            }
+                                            else {
+                                              cart.add(widget); //update
+                                              widget.num = 1;
+                                            }
+                                            sum += widget.price;
+                                          });},
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: Colors.blue,
+                                                borderRadius: BorderRadius.circular(5.0)
+                                            ),
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(3.0),
+                                              child: Text(
+                                                "Добавить в корзину",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 10.0),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 5.0,
+                                        ),
+                                        Text(
+                                          "",
+                                          style: TextStyle(
+                                              color: Colors.black, fontSize: 10.0),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      )
                   ),
-                  subtitle: Text(
-                    widget.oldPrice.toString() + 'р',
-                    style: TextStyle(
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w800,
-                        fontSize: 17,
-                      decoration:TextDecoration.lineThrough),
                 ),
-              ),),
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ProductInfo(product: Product(
-                    name: widget.name, id:widget.id, picture: widget.picture,
-                    value: widget.value, brand: widget.brand,
-                    oldPrice: widget.oldPrice, price: widget.price,)
-                  )
-              )),
-            ),
-          )),
+              ),
+            )
+          )
+      )
     );
   }
 }

@@ -1,7 +1,6 @@
-import 'package:flutterapp/Animation/FadeAnimation.dart';
+import 'package:flutterapp/animation/fadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-
 import 'onBoarding/onboarding.dart';
 
 void main() => runApp(MyApp());
@@ -58,7 +57,6 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(

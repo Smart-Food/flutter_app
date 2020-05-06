@@ -1,37 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/maps/main.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:flutterapp/catalog/globus/globus.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:flutterapp/payments/main.dart';
-import 'maps/main.dart';
-import 'package:flutterapp/login/profileMenu.dart';
+import 'package:flutterapp/login/login.dart';
+import 'package:flutterapp/login/signup.dart';
+import 'package:flutterapp/login/profile.dart';
 
-Color appColor = Colors.green;
-Color appColor50 = Colors.green[50];
-
-class Menu extends StatefulWidget {
-  Menu({Key key, this.title}) : super(key: key);
-
-
+class ProfileMenu extends StatefulWidget {
+  ProfileMenu({Key key, this.title}) : super(key: key);
   final String title;
-
   @override
-  _MenuState createState() => _MenuState();
+  _ProfileMenuState createState() => _ProfileMenuState();
 }
 
-class _MenuState extends State<Menu> { // Меню приложения
+int profilePosition = 0;
 
+class _ProfileMenuState extends State<ProfileMenu> { // Меню приложения
   int selectedIndex = 0;
-
   PageController controller = PageController();
-
   List<GButton> tabs = new List();
   final List<Widget> _children = [
-    Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
-    SmartMaps(),
-    Payment(),
-    ProfileMenu(),
+    Login(),
+    SignUp(),
+    Profile(),
   ];
 
   @override
@@ -43,10 +33,10 @@ class _MenuState extends State<Menu> { // Меню приложения
 
     tabs.add(GButton(
       gap: gap,
-      iconActiveColor: appColor,
-      iconColor: appColor,
-      textColor: appColor,
-      color: appColor50,
+      iconActiveColor: Colors.green,
+      iconColor: Colors.green,
+      textColor: Colors.green,
+      color: Colors.green[50],
       iconSize: 24,
       padding: padding,
       icon: LineIcons.home,
@@ -56,10 +46,10 @@ class _MenuState extends State<Menu> { // Меню приложения
 
     tabs.add(GButton(
       gap: gap,
-      iconActiveColor: appColor,
-      iconColor: appColor,
-      textColor: appColor,
-      color: appColor50,
+      iconActiveColor: Colors.green,
+      iconColor: Colors.green,
+      textColor: Colors.green,
+      color: Colors.green[50],
       iconSize: 24,
       padding: padding,
       icon: LineIcons.map,
@@ -69,28 +59,15 @@ class _MenuState extends State<Menu> { // Меню приложения
 
     tabs.add(GButton(
       gap: gap,
-      iconActiveColor: appColor,
-      iconColor: appColor,
-      textColor: appColor,
-      color: appColor50,
+      iconActiveColor: Colors.green,
+      iconColor: Colors.green,
+      textColor: Colors.green,
+      color: Colors.green[50],
       iconSize: 24,
       padding: padding,
       icon: LineIcons.credit_card,
       // textStyle: t.textStyle,
       text: 'Оплата',
-    ));
-
-    tabs.add(GButton(
-      gap: gap,
-      iconActiveColor: appColor,
-      iconColor: appColor,
-      textColor: appColor,
-      color: appColor50,
-      iconSize: 24,
-      padding: padding,
-      icon: LineIcons.user,
-      // textStyle: t.textStyle,
-      text: 'Профиль',
     ));
   }
 
@@ -108,9 +85,9 @@ class _MenuState extends State<Menu> { // Меню приложения
           },
           controller: controller,
           itemBuilder: (context, position) {
-            return Container(child: _children[position],);
+            return Container(child: _children[profilePosition],);
           },
-          itemCount: tabs.length, // Can be null
+          itemCount: 1, // Can be null
         ),
         bottomNavigationBar: SafeArea(
           child: Container(
@@ -133,6 +110,7 @@ class _MenuState extends State<Menu> { // Меню приложения
             ),
           ),
         ),
+
       ),
     );
   }
