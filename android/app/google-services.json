@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "611942934935",
-    "firebase_url": "https://smart-food-dev.firebaseio.com",
-    "project_id": "smart-food-dev",
-    "storage_bucket": "smart-food-dev.appspot.com"
+    "project_number": "751371809470",
+    "firebase_url": "https://food-up-dev.firebaseio.com",
+    "project_id": "food-up-dev",
+    "storage_bucket": "food-up-dev.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:611942934935:android:95f17230822d2a1ad93cd2",
+        "mobilesdk_app_id": "1:751371809470:android:831e04fe2591140303e4ef",
         "android_client_info": {
-          "package_name": "com.smart.food.dev"
+          "package_name": "com.foodup.dev"
         }
       },
       "oauth_client": [
         {
-          "client_id": "611942934935-stbag9hqt771f414bj37koklv2hiak8d.apps.googleusercontent.com",
+          "client_id": "751371809470-7t64klrj5u15cc3cv6c4c7g89jcvvraj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "API_KEY"
+          "current_key": "AIzaSyDynrZd9uz8S40SkglwnjlVV8Ura8d712A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "611942934935-stbag9hqt771f414bj37koklv2hiak8d.apps.googleusercontent.com",
+              "client_id": "751371809470-7t64klrj5u15cc3cv6c4c7g89jcvvraj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
