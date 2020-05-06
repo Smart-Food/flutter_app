@@ -23,10 +23,8 @@ class MyApp extends StatelessWidget {
 }
 
 class Breads extends StatefulWidget {
-  Breads({Key key, this.title}) : super(key: key);
-
-
   final String title;
+  Breads({Key key, this.title}) : super(key: key);
 
   @override
   _BreadsState createState() => _BreadsState();

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutterapp/catalog/globus/globus_catalog.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:flutterapp/payments/main.dart';
 import 'login/login.dart';
 //import 'maps/async_maps.dart';
-
 //import 'package:flutterapp/services/paymentMain.dart';
 //import 'package:flutterapp/maps/maps.dart';
 import 'package:flutterapp/maps/full_map.dart';
@@ -32,14 +30,12 @@ class _MenuState extends State<Menu> { // Меню приложения
 
   List<GButton> tabs = new List();
   final List<Widget> _children = [
-    GlobusCatalog(),
+    GlobusCatalog(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
     //SmartMaps(),
     //MapsDemo(),
     //AsyncMaps(),
-    //YandexMap(),
-    //SmartMapsCheep(),
-    //FullMapPage(),
-    MapUiPage(),
+    FullMapPage(),
+    //MapUiPage(),
     Payment(),
     Login(),
   ];
