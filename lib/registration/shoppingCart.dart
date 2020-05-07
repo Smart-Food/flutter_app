@@ -126,6 +126,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                         setState(() {
                                           if (cart[index].num != 0)
                                             cart[index].num -= 1;
+                                          sum -= cart[index].price;
                                         });
                                       },
                                     ),
@@ -156,6 +157,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                       onPressed:() {
                                         setState(() {
                                           cart[index].num += 1;
+                                          sum += cart[index].price;
                                         });
                                       },
                                     ),
