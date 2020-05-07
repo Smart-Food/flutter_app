@@ -49,7 +49,7 @@ class _State extends State<GlobusMain> {
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.only(bottom: 20),
                 alignment: Alignment.bottomCenter,
-                child: Image.network('https://clck.ru/' + widget.logo),
+                child: Image.network(widget.logo),
               )
           ),
           Positioned(
@@ -60,7 +60,7 @@ class _State extends State<GlobusMain> {
                   padding: EdgeInsets.only(bottom: 20),
                   alignment: Alignment.bottomCenter,
                   height: 440,
-                  child: Image.network('https://clck.ru/' + widget.shop)
+                  child: Image.network(widget.shop)
               )
           ),
           NotificationListener<ScrollNotification>(

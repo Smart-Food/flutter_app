@@ -22,9 +22,8 @@ dependencies:
   page_transition: ^1.1.4
   #maps
   http: ^0.12.0+4
-  google_maps_webservice: ^0.0.16
+  #google_maps_webservice: ^0.0.16
   geolocator: any
-  google_maps_flutter: ^0.5.25+3
   rxdart: any
   geoflutterfire: ^2.1.0
   location: ^3.0.2
@@ -40,6 +39,8 @@ dependencies:
   stripe_payment: ^1.0.7
   progress_dialog: ^1.2.2
   font_awesome_flutter: ^8.8.1
+  google_maps_flutter: ^0.5.27+1
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -58,16 +59,10 @@ dev_dependencies:
 flutter:
   assets:
     - assets/data.json
-    - assets/creatingprofile.png
-    - assets/biscuits.png
-    - assets/breads.png
-    - assets/cakes.png
-    - assets/chocolates.png
-    - assets/creatingprofile.png
-    - assets/marshmallows.png
     - assets/background.jpg
+    - assets/breads.json
+    - assets/alcohol.json
     - assets/hotel0.jpg
-    - assets/buckweat1.jpg
     - assets/orderFoodOnline.jpg
     - assets/onlineMenu.jpg
     - assets/restaurantsNearMe.jpg

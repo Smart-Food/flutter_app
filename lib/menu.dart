@@ -28,7 +28,7 @@ class _MenuState extends State<Menu> { // Меню приложения
 
   List<GButton> tabs = new List();
   final List<Widget> _children = [
-    Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
+    Globus(logo: 'https://bit-ly.ru/AHOI', shop: 'https://bit-ly.ru/elXLDTr', fileName: 'data.json'),
     FullMapPage(),
     Payment(),
     ProfileMenu(),

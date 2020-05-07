@@ -59,7 +59,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> {
                               Navigator.push(
                                   context, MaterialPageRoute(builder: (context) => GlobusMenu()));
                             },
-                            child: _buildProductCard("Собственное производство", "assets/globusCatalog/globusPng/Собственное производство.png", 0xffC4D4A3, 0XffE0E8CF),
+                            child: _buildProductCard("Алкоголь", "assets/globusCatalog/globusPng/Собственное производство.png", 0xffC4D4A3, 0XffE0E8CF),
                           ),
                         ),
                         SizedBox(height: 8),
@@ -73,7 +73,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> {
                               Navigator.push(
                                   context, MaterialPageRoute(builder: (context) => GlobusMenu()));
                             },
-                            child: _buildProductCard("Собственное производство", "assets/globusCatalog/globusPng/Собственное производство.png", 0xffC4D4A3, 0XffE0E8CF),
+                            child: _buildProductCard("Бакалея", "assets/globusCatalog/globusPng/Собственное производство.png", 0xffC4D4A3, 0XffE0E8CF),
                           ),
                         ),
                         SizedBox(height: 8),
@@ -87,7 +87,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> {
                               Navigator.push(
                                   context, MaterialPageRoute(builder: (context) => GlobusMenu()));
                             },
-                            child: _buildProductCard("Собственное производство", "assets/globusCatalog/globusPng/Собственное производство.png", 0xffC4D4A3, 0XffE0E8CF),
+                            child: _buildProductCard("Всё для автомобилей и дачи", "assets/globusCatalog/globusPng/Собственное производство.png", 0xffC4D4A3, 0XffE0E8CF),
                           ),
                         ),
                         SizedBox(height: 8),
@@ -101,7 +101,7 @@ class _GlobusCatalogState extends State<GlobusCatalog> {
                               Navigator.push(
                                   context, MaterialPageRoute(builder: (context) => GlobusMenu()));
                             },
-                            child: _buildProductCard("Собственное производство", "assets/globusCatalog/globusPng/Собственное производство.png", 0xffC4D4A3, 0XffE0E8CF),
+                            child: _buildProductCard("Всё для сада и огорода", "assets/globusCatalog/globusPng/Собственное производство.png", 0xffC4D4A3, 0XffE0E8CF),
                           ),
                         ),
                         SizedBox(height: 8),

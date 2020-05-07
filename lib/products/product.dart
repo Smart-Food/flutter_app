@@ -72,8 +72,6 @@ class ProductState extends State<Product> {
                                     children: <Widget>[
                                       Row(
                                         children: <Widget>[
-                                          FadeAnimation(
-                                            1.5,
                                             Text(
                                               widget.name,
                                               style: TextStyle(
@@ -81,31 +79,22 @@ class ProductState extends State<Product> {
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 12.0),
                                             ),
-                                          ),
                                           Spacer(),
-                                          FadeAnimation(
-                                            1.5,
-                                              Icon(
-                                                Icons.favorite_border,
-                                                color: Colors.red,
-                                                size: 20.0,
-                                              )
+                                          Icon(
+                                            Icons.favorite_border,
+                                            color: Colors.red,
+                                            size: 20.0,
                                           )
                                         ],
                                       ),
-                                      FadeAnimation(
-                                        1.75,
                                         Text(
                                           widget.price.toString() + "р.",
                                           style: TextStyle(
                                               color: Colors.black, fontSize: 14.0),
                                         ),
-                                      ),
                                       SizedBox(
                                         height: 3.0,
                                       ),
-                                      FadeAnimation(
-                                        2.0,
                                           Row(
                                             children: <Widget>[
                                               Text(
@@ -118,7 +107,6 @@ class ProductState extends State<Product> {
                                               ),
                                             ],
                                           )
-                                      )
                                     ],
                                   ),
                                 ),
@@ -159,7 +147,7 @@ class ProductState extends State<Product> {
                                                 "Добавить в корзину",
                                                 style: TextStyle(
                                                     color: Colors.white,
-                                                    fontSize: 10.0),
+                                                    fontSize: 12.0),
                                               ),
                                             ),
                                           ),

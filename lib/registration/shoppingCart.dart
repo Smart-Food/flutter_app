@@ -203,7 +203,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                 FadeAnimation(
                   1.5,
                   Text(
-                    sum.toString() + "р.",
+                    sum.toStringAsFixed(2) + "р.",
                     style: TextStyle(
                       fontSize: 14.0,
                       fontWeight: FontWeight.bold,

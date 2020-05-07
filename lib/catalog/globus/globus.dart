@@ -118,7 +118,7 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                   },
                   child: Center(
                       child: FlatButton(
-                        child: Text("Метро", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+                        child: Text("Глобус", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
                         onPressed: () => Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json')
                         )),
@@ -160,7 +160,7 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                   },
                   child: Center(
                       child: FlatButton(
-                        child: Text("Метро", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
+                        child: Text("Ашан", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
                         onPressed: () => Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json')
                         )),
