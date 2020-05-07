@@ -5,18 +5,18 @@ import '../payments/main.dart';
 import 'package:flutterapp/animation/fadeAnimation.dart';
 
 class ShoppingCart extends StatefulWidget {
-  final cart;
-  ShoppingCart(this.cart);
+  //final cart;
+  //ShoppingCart(this.cart);
   @override
-  _ShoppingCartState createState() => _ShoppingCartState(cart);
+  _ShoppingCartState createState() => _ShoppingCartState();
 }
 
 int changeNum = 0;
 
 class _ShoppingCartState extends State<ShoppingCart> {
   @override
-  final cart;
-  _ShoppingCartState(this.cart);
+  //final cart;
+  //_ShoppingCartState(this.cart);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -269,9 +269,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
                 onPressed: () {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => Payment()));
-                  setState(() {
-                    cart;
-                  });
+                   // sum = 0;
+                    //cart.removeRange(0, cart.length);
                 },
                 color: Colors.green,
                 height: 50.0,
