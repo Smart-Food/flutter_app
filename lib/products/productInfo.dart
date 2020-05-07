@@ -81,7 +81,7 @@ class _ProductInfoState extends State<ProductInfo> {
                             children:<Widget>[
                               IconButton(
                                   onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => ShoppingCart(cart)
+                                      builder: (context) => ShoppingCart()
                                   )),
                                   icon: Icon(Icons.shopping_cart),
                                   color: Colors.black

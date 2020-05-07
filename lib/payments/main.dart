@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'existing-cards.dart';
 import 'payment-service.dart';
 import 'package:progress_dialog/progress_dialog.dart';
+import 'package:flutterapp/products/productList.dart';
 
 class Payment extends StatefulWidget {
   Payment({Key key}) : super(key: key);
@@ -25,6 +26,8 @@ class HomePageState extends State<Payment> {
   }
 
   payViaNewCard(BuildContext context) async {
+    cart = [];
+    sum = 0;
     ProgressDialog dialog = new ProgressDialog(context);
     dialog.style(
         message: 'Please wait...'
