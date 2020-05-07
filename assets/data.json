@@ -2,71 +2,71 @@
   {
     "id": 1,
     "name": "Шпикачки По-чешски Глобус, 1 кг",
-    "picture": "https://www.globus.ru/upload/iblock/ccf/ccfbbbb8c0b71929a1d4717fad8191b1.jpg",
-    "oldPrice": 85.0,
+    "picture": "https://clck.ru/NKW4o",
+    "oldPrice": 385.0,
     "price": 369.90
   },
   {
     "id": 2,
     "name": "Сосиски Глобус, 1 кг",
-    "picture": "https://www.globus.ru/upload/iblock/64f/64f1ff9aa38a023e9bec4428a595f27a.jpg",
-    "oldPrice": 55.0,
+    "picture": "https://clck.ru/NKW6f",
+    "oldPrice": 255.0,
     "price": 299.90
   },
   {
     "id": 3,
     "name": "Мясной хлеб По-Баварски Глобус, кусок, 1 кг",
-    "picture": "https://www.globus.ru/upload/iblock/134/13491471e84e5f5921150305e2ad82cd.jpg",
-    "oldPrice": 55.0,
+    "picture": "https://clck.ru/NKW6y",
+    "oldPrice": 255.0,
     "price": 219.90
   },
   {
     "id": 4,
     "name": "Сок грейпфрутовый Глобус, 0,3 л",
-    "picture": "https://www.globus.ru/upload/iblock/d7f/d7fd9eeac525784c314b1693d6367562.jpg",
-    "oldPrice": 55.0,
+    "picture": "https://clck.ru/NKW7U",
+    "oldPrice": 255.0,
     "price": 249.99
   },
   {
     "id": 5,
     "name": "Колбаски свиные для жарки Глобус, 1 кг",
-    "picture": "https://www.globus.ru/upload/iblock/777/77797bb966be19c070a1a60cbbe451f8.jpg",
+    "picture": "https://clck.ru/NKW7k",
     "oldPrice": 289.90,
     "price": 259.90
   },
   {
     "id": 6,
     "name": "Сардельки Глобус, 1 кг",
-    "picture": "https://www.globus.ru/upload/iblock/978/978906de1c30a471aec8a3651858e67b.jpg",
-    "oldPrice": 55.0,
+    "picture": "https://clck.ru/NKW7t",
+    "oldPrice": 455.0,
     "price": 359.90
   },
   {
     "id": 7,
     "name": "Кекс Пасхальный Премиум, 650 г",
-    "picture": "https://www.globus.ru/upload/iblock/717/71773790a597e7e41b0db1555dd6d0f8.jpg",
-    "oldPrice": 55.0,
+    "picture": "https://clck.ru/NKW8M",
+    "oldPrice": 355.0,
     "price": 299.99
   },
   {
     "id": 8,
     "name": "Сосиски Венские Глобус, 1 кг",
-    "picture": "https://www.globus.ru/upload/iblock/585/5850cbf6e5235d6fa9f65b06ec5fa993.jpg",
-    "oldPrice": 55.0,
+    "picture": "https://clck.ru/NKW8j",
+    "oldPrice": 400.0,
     "price": 379.90
   },
   {
     "id": 9,
     "name": "Сок из грейпфрута и апельсина Глобус, 0,3 л",
-    "picture": "https://www.globus.ru/upload/iblock/86b/86be211a936f157e26f2c2bb802aacca.jpg",
-    "oldPrice": 55.0,
+    "picture": "https://clck.ru/NKW98",
+    "oldPrice": 300.0,
     "price": 219.99
   },
   {
     "id": 10,
     "name": "Форель Мурманская охлажденная, стейк, 1 кг",
-    "picture": "https://www.globus.ru/upload/iblock/2a6/2a62eec4fa0186b85caf26ff0294dcf1.jpg",
-    "oldPrice": 55.0,
+    "picture": "https://clck.ru/NKW9W",
+    "oldPrice": 2000.0,
     "price": 1119.90
   }
 ]

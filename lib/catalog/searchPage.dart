@@ -96,7 +96,7 @@ class ProductSearch extends SearchDelegate<Product>{
             ),
           );
         },
-        trailing: Text("\$${suggestionList[index].price}",
+        trailing: Text(suggestionList[index].price.toString() + 'р',
          style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500),),
         title: RichText(
           text: TextSpan(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
 import 'package:flutterapp/products/productList.dart';
@@ -200,7 +201,7 @@ class _ProductInfoState extends State<ProductInfo> {
                                 Column(
                                   children: <Widget>[
                                     Text(
-                                      '\$${prod.price}',
+                                      prod.price.toString() + 'р',
                                       style: TextStyle(
                                         fontSize: 22.0,
                                         fontWeight: FontWeight.w600,
@@ -263,13 +264,7 @@ class _ProductInfoState extends State<ProductInfo> {
                       bottom: 15.0,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child: Image(
-                          width: 110.0,
-                          image: AssetImage(
-                            prod.picture,
-                          ),
-                          fit: BoxFit.cover,
-                        ),
+                        child: Image.network(prod.picture, height: 110, width: 110),
                       ),
                     ),
                   ],
