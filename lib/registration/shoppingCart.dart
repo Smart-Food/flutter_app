@@ -11,8 +11,6 @@ class ShoppingCart extends StatefulWidget {
   _ShoppingCartState createState() => _ShoppingCartState();
 }
 
-int changeNum = 0;
-
 class _ShoppingCartState extends State<ShoppingCart> {
   @override
   //final cart;
@@ -100,7 +98,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                       ),
                                       onPressed:() {
                                         setState(() {
-                                          sum = sum - cart[index].price*(cart[index].num + changeNum);
+                                          sum = sum - cart[index].price*(cart[index].num);
                                           cart.removeAt(index);
                                         });
                                         Scaffold.of(context).showSnackBar(SnackBar(content: Text("Продукт был удалён")));
@@ -120,14 +118,14 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                     ),
                                     child: IconButton(
                                       icon: Icon(
-                                        Icons.add,
-                                        color: Colors.white,
+                                        Icons.remove,
+                                        color: Colors.red,
                                         size: 15.0,
                                       ),
                                       onPressed:() {
                                         setState(() {
-                                          if (cart[index].num + changeNum != 0)
-                                            changeNum--;
+                                          if (cart[index].num != 0)
+                                            cart[index].num -= 1;
                                         });
                                       },
                                     ),
@@ -135,7 +133,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                   Padding(
                                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                     child: Text(
-                                      (cart[index].num + changeNum).toString(),
+                                      (cart[index].num ).toString(),
                                       style: TextStyle(
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.bold,
@@ -152,12 +150,12 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                     child: IconButton(
                                       icon: Icon(
                                         Icons.add,
-                                        color: Colors.white,
+                                        color: Colors.red,
                                         size: 15.0,
                                       ),
                                       onPressed:() {
                                         setState(() {
-                                          changeNum++;
+                                          cart[index].num += 1;
                                         });
                                       },
                                     ),
