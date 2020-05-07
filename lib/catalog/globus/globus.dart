@@ -208,6 +208,10 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
 //    ));
 
   Widget Dashboard(context) {
+    int totalCount = 0;
+    cart.forEach((item){
+      totalCount = totalCount + item.num;
+    });
     return AnimatedPositioned(
       duration: duration,
       top: 0,
@@ -297,12 +301,12 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                                           top: 3.0,
                                           right: 7,
                                           child: Center(
-//                                        child: Text('$totalCount',
-//                                          style: TextStyle(
-//                                              color: Colors.white,
-//                                              fontSize: 12.0,
-//                                              fontWeight: FontWeight.w500),
-//                                        ),
+                                        child: Text('$totalCount',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12.0,
+                                              fontWeight: FontWeight.w500),
+                                        ),
                                           )
                                       ),
                                     ],
