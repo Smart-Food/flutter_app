@@ -1,15 +1,15 @@
 import 'dart:convert';
-
+import 'package:flutterapp/shop/shopTabbar/shopMenu.dart';
+import 'package:flutterapp/data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/product.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/registration/shoppingCart.dart';
-import 'package:flutterapp/catalog/globus/globusPages/globusMain.dart';
-import 'package:flutterapp/catalog/globus/globusPages/globusCatalog.dart';
-import 'package:flutterapp/catalog/globus/globusPages/globusMenu.dart';
-import 'package:flutterapp/menu.dart';
-
-import '../searchPage.dart';
+import 'package:flutterapp/shop/shopTabbar/shopMain.dart';
+import 'package:flutterapp/maps/full_map.dart';
+import 'package:flutterapp/login/login.dart';
+import 'package:flutterapp/payments/main.dart';
+import 'searchPage.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false, // Убрана надпись Debug
               title: 'SmartFood',
-              home: Globus(),
+              home: Shop(),
             );
           },
         );
@@ -32,18 +32,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Globus extends StatefulWidget {
+int navbarIndex = 0;
+int shopIndex = 0;
+
+class Shop extends StatefulWidget {
   final String logo, shop;
   final String title, fileName;
-  const Globus ({ Key key, this.logo, this.shop, this.title, this.fileName }): super(key: key);
-
-
+  const Shop ({ Key key, this.logo, this.shop, this.title, this.fileName }): super(key: key);
 
   @override
-  _GlobusState createState() => _GlobusState();
+  _ShopState createState() => _ShopState();
 }
 
-class _GlobusState extends State<Globus> with TickerProviderStateMixin{
+class _ShopState extends State<Shop> with TickerProviderStateMixin{
   bool isCollapsed = true;
   double screenWidth, screenHeight;
   final Duration duration = const Duration(milliseconds: 300);
@@ -112,17 +113,12 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                         _controller.forward();
                       else
                         _controller.reverse();
-
                       isCollapsed = !isCollapsed;
+                      shopIndex = 0;
                     });
                   },
                   child: Center(
-                      child: FlatButton(
-                        child: Text("Глобус", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json')
-                        )),
-                      )
+                    child: Text("Глобус", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -133,17 +129,12 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                         _controller.forward();
                       else
                         _controller.reverse();
-
                       isCollapsed = !isCollapsed;
+                      shopIndex = 1;
                     });
                   },
                   child: Center(
-                      child: FlatButton(
-                        child: Text("Метро", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json')
-                        )),
-                      )
+                    child: Text("Метро", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -154,17 +145,12 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                         _controller.forward();
                       else
                         _controller.reverse();
-
                       isCollapsed = !isCollapsed;
+                      shopIndex = 2;
                     });
                   },
                   child: Center(
-                      child: FlatButton(
-                        child: Text("Ашан", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json')
-                        )),
-                      )
+                    child: Text("Ашан", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
                   ),
                 ),
                 SizedBox(height: 10),
@@ -175,17 +161,12 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                         _controller.forward();
                       else
                         _controller.reverse();
-
                       isCollapsed = !isCollapsed;
+                      shopIndex = 3;
                     });
                   },
                   child: Center(
-                      child: FlatButton(
-                        child: Text("Лента", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
-                        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Globus(logo: 'NBAfH', shop: 'NBAQv', fileName: 'breads.json')
-                        )),
-                      )
+                    child: Text("Лента", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),),
                   ),
                 ),
               ],
@@ -208,10 +189,6 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
 //    ));
 
   Widget Dashboard(context) {
-    int totalCount = 0;
-    cart.forEach((item){
-      totalCount = totalCount + item.num;
-    });
     return AnimatedPositioned(
       duration: duration,
       top: 0,
@@ -301,12 +278,12 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                                           top: 3.0,
                                           right: 7,
                                           child: Center(
-                                        child: Text('$totalCount',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 12.0,
-                                              fontWeight: FontWeight.w500),
-                                        ),
+//                                        child: Text('$totalCount',
+//                                          style: TextStyle(
+//                                              color: Colors.white,
+//                                              fontSize: 12.0,
+//                                              fontWeight: FontWeight.w500),
+//                                        ),
                                           )
                                       ),
                                     ],
@@ -319,7 +296,7 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                   ),
                   TabBar( // меню каталога товаров
                       controller: tabController,
-                      indicatorColor: Colors.green,
+                      indicatorColor: dataList[shopIndex].shopColor,
                       indicatorWeight: 3.0,
                       labelColor: Colors.black,
                       unselectedLabelColor: Colors.grey,
@@ -349,26 +326,105 @@ class _GlobusState extends State<Globus> with TickerProviderStateMixin{
                               fontFamily: 'OpenSans'
                           ),),
                         ),
-                      ]),
+                      ]
+                      ),
                   Expanded( // переход по разделам товаров
                     child: Container(
                       child: TabBarView(
                           controller: tabController,
                           children: <Widget>[
-                            GlobusMain(logo: widget.logo, shop: widget.shop),
-                            GlobusMenu(),
-//                            Products(fileName: widget.fileName),
+                            ShopMain(logo: widget.logo, shop: widget.shop),
+                            ShopMenu(),
                             Products(fileName: 'alcohol.json'),
                             Products(fileName: 'breads.json',),
-                            //                    Cosmetics(),
                           ]),
                     ),
-                  )
+                  ),
+                  Container(
+                    height: 60.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(30.0),
+                        topLeft: Radius.circular(30.0),
+                      ),
+                      color: dataList[shopIndex].shopColor,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left:40.0, right: 40.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          IconButton(
+                              icon: Icon(
+                                  Icons.home,
+                                  size: 20,
+                                  color: navbarIndex == 0 ? Colors.black : Colors.white
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  navbarIndex = 0;
+                                });
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Shop(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
+                                ));
+                              }
+                          ),
+                          IconButton(
+                              icon: Icon(
+                                  Icons.map,
+                                  size: 20,
+                                  color: navbarIndex == 1 ? Colors.black : Colors.white
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  navbarIndex = 1;
+                                });
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => FullMapPage(),
+                                ));
+                              }
+                          ),
+                          IconButton(
+                              icon: Icon(
+                                  Icons.credit_card,
+                                  size: 20,
+                                  color: navbarIndex == 2 ? Colors.black : Colors.white
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  navbarIndex = 2;
+                                });
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Payment(),
+                                ));
+                              }
+                          ),
+                          IconButton(
+                              icon: Icon(
+                                  Icons.person,
+                                  size: 20,
+                                  color: navbarIndex == 3 ? Colors.black : Colors.white
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  navbarIndex = 3;
+                                });
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => Login(),
+                                ));
+                              }
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                 ]
             );
             },future: DefaultAssetBundle.of(context).loadString("assets/data.json"),
-    ))
+    )),
+
         ),
+
       );
   }
 }

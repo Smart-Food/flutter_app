@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'data.dart';
 import 'page_indicator.dart';
 import 'package:gradient_text/gradient_text.dart';
-import 'package:flutterapp/menu.dart';
+import 'package:flutterapp/shop/shop.dart';
 
 class Onboarding extends StatefulWidget {
   @override
@@ -155,7 +155,7 @@ class _OnboardingState extends State<Onboarding> with TickerProviderStateMixin {
                     color: Colors.black,
                   ),
                   onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => Menu()
+                      builder: (context) => Shop(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json')
                   )),
                 )
                     : Container(),
