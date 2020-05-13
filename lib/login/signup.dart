@@ -2,7 +2,10 @@ import 'package:flutterapp/animation/fadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/domain/user.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
+import 'package:flutterapp/data.dart';
+import 'package:flutterapp/shop/shop.dart';
+import 'package:flutterapp/maps/full_map.dart';
+import 'package:flutterapp/payments/main.dart';
 import 'login.dart';
 import 'auth.dart';
 
@@ -32,9 +35,9 @@ class SignUpState extends State<SignUp> {
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 colors: [
-                  Colors.purple[900],
-                  Colors.purple[800],
-                  Colors.purple[400]
+                  dataList[shopIndex].gradientColor1,
+                  dataList[shopIndex].gradientColor2,
+                  dataList[shopIndex].gradientColor3,
                 ]
             )
         ),
@@ -103,7 +106,7 @@ class SignUpState extends State<SignUp> {
                         )),
                         FadeAnimation(1.6, Container(
                           child: RaisedButton(
-                            color: Colors.orange[900],
+                            color: dataList[shopIndex].gradientColor3,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50)
                             ),
@@ -122,6 +125,84 @@ class SignUpState extends State<SignUp> {
               ),
             )
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 60.0,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(30.0),
+            topLeft: Radius.circular(30.0),
+          ),
+          color: dataList[shopIndex].shopColor,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(left:40.0, right: 40.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(
+                  icon: Icon(
+                      Icons.home,
+                      size: 20,
+                      color: navbarIndex == 0 ? Colors.black : Colors.white
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      navbarIndex = 0;
+                    });
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Shop(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
+                    ));
+                  }
+              ),
+              IconButton(
+                  icon: Icon(
+                      Icons.map,
+                      size: 20,
+                      color: navbarIndex == 1 ? Colors.black : Colors.white
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      navbarIndex = 1;
+                    });
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => FullMapPage(),
+                    ));
+                  }
+              ),
+              IconButton(
+                  icon: Icon(
+                      Icons.credit_card,
+                      size: 20,
+                      color: navbarIndex == 2 ? Colors.black : Colors.white
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      navbarIndex = 2;
+                    });
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Payment(),
+                    ));
+                  }
+              ),
+              IconButton(
+                  icon: Icon(
+                      Icons.person,
+                      size: 20,
+                      color: navbarIndex == 3 ? Colors.black : Colors.white
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      navbarIndex = 3;
+                    });
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Login(),
+                    ));
+                  }
+              )
+            ],
+          ),
         ),
       ),
     );

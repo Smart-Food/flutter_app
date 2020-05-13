@@ -152,14 +152,6 @@ class ProductState extends State<Product> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
-                                          width: 5.0,
-                                        ),
-                                        Text(
-                                          "",
-                                          style: TextStyle(
-                                              color: Colors.black, fontSize: 10.0),
-                                        )
                                       ],
                                     ),
                                   ),

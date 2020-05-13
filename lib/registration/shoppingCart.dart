@@ -98,7 +98,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                       ),
                                       onPressed:() {
                                         setState(() {
-                                          sum = sum - cart[index].price*(cart[index].num);
+                                          sum = sum - cart[index].price*cart[index].num;
                                           cart.removeAt(index);
                                         });
                                         Scaffold.of(context).showSnackBar(SnackBar(content: Text("Продукт был удалён")));
@@ -118,15 +118,19 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                     ),
                                     child: IconButton(
                                       icon: Icon(
-                                        Icons.remove,
-                                        color: Colors.red,
+                                        Icons.add,
+                                        color: Colors.white,
                                         size: 15.0,
                                       ),
                                       onPressed:() {
                                         setState(() {
                                           if (cart[index].num != 0)
-                                            cart[index].num -= 1;
-                                          sum -= cart[index].price;
+                                            {
+                                              cart[index].num--;
+                                              cart.forEach((item){
+                                                sum = cart[index].price*cart[index].num;
+                                              });
+                                            }
                                         });
                                       },
                                     ),
@@ -134,7 +138,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                   Padding(
                                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                                     child: Text(
-                                      (cart[index].num ).toString(),
+                                      cart[index].num.toString(),
                                       style: TextStyle(
                                         fontSize: 16.0,
                                         fontWeight: FontWeight.bold,
@@ -151,13 +155,15 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                     child: IconButton(
                                       icon: Icon(
                                         Icons.add,
-                                        color: Colors.red,
+                                        color: Colors.white,
                                         size: 15.0,
                                       ),
                                       onPressed:() {
                                         setState(() {
-                                          cart[index].num += 1;
-                                          sum += cart[index].price;
+                                          cart[index].num++;
+                                          cart.forEach((item){
+                                            sum = cart[index].price*cart[index].num;
+                                          });
                                         });
                                       },
                                     ),

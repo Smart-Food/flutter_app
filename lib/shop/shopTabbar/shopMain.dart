@@ -1,55 +1,35 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterapp/catalog/story.dart';
 import 'package:flutterapp/animation/fadeAnimation.dart';
+import 'package:flutterapp/data.dart';
+import 'package:flutterapp/shop/shop.dart';
 
-class GlobusMain extends StatefulWidget {
+class ShopMain extends StatefulWidget {
   final String logo, shop;
-  const GlobusMain ({ Key key, this.logo, this.shop }): super(key: key);
+  const ShopMain ({ Key key, this.logo, this.shop }): super(key: key);
 
-  _State createState() => _State();
+  _ShopState createState() => _ShopState();
 }
 
-class _State extends State<GlobusMain> {
+class _ShopState extends State<ShopMain> {
 
   double _scrollOffsetY = 0;
-  List<Story> _stories = [
-    Story(
-      "https://clck.ru/N8Wo6",
-      "Успей",
-      "купить",
-    ),
-    Story(
-      "https://clck.ru/N8Wrd",
-      "Социальная",
-      "скидка",
-    ),
-    Story(
-      "https://clck.ru/N8WsL",
-      "Скидки",
-      "по карте",
-    ),
-    Story(
-      "https://clck.ru/N8Wsi",
-      "Бонусы",
-      "по карте",
-    )
-  ];
 
   @override
   Widget build(BuildContext context) {
+    var shopPage = dataList[shopIndex];
     return Scaffold(
       body: Stack(
         children: <Widget>[
           Positioned(
-              top: 0-_scrollOffsetY*0.5,
+              top: 0-_scrollOffsetY*0.25,
               left: 0,
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.only(bottom: 20),
                 alignment: Alignment.bottomCenter,
-                child: Image.network(widget.logo),
+                child: Image.asset(shopPage.imageLogo),
               )
           ),
           Positioned(
@@ -59,8 +39,8 @@ class _State extends State<GlobusMain> {
                   width: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.only(bottom: 20),
                   alignment: Alignment.bottomCenter,
-                  height: 440,
-                  child: Image.network(widget.shop)
+                  height: 370,
+                  child: Image.asset(shopPage.imageShop)
               )
           ),
           NotificationListener<ScrollNotification>(
@@ -70,14 +50,14 @@ class _State extends State<GlobusMain> {
               setState(() {});
             },
             child: ListView.builder(
-                padding: EdgeInsets.only(top: 400),
+                padding: EdgeInsets.only(top: 350),
                 itemCount: 5,
                 itemExtent: 200.0,
                 itemBuilder: (BuildContext context, int index) {
                   return index == 0
                       ? Container(
                     width: MediaQuery.of(context).size.width,
-                    color: Colors.transparent,
+                    color: Colors.white,
                     child: Stack(
                       children: <Widget>[
                         Container(
@@ -86,10 +66,9 @@ class _State extends State<GlobusMain> {
                           color: Colors.white,
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.symmetric(horizontal: 5),
                           child: Container(
                             width: MediaQuery.of(context).size.width,
-//                          margin: EdgeInsets.symmetric(vertical: 10,),
                             height: 160,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey.shade400),
@@ -98,7 +77,7 @@ class _State extends State<GlobusMain> {
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               shrinkWrap: true,
-                              children: _stories.map((story) {
+                              children: shopPage.stories.map((story) {
                                 return Column(
                                   children: <Widget>[
                                     SizedBox(
@@ -108,7 +87,7 @@ class _State extends State<GlobusMain> {
                                       1,
                                       Container(
                                         margin: EdgeInsets.symmetric(
-                                          horizontal: 15,
+                                          horizontal: 20,
                                         ),
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(70),
