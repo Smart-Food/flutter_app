@@ -170,7 +170,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                   ),
                                   Spacer(),
                                   Text(
-                                      cart[index].price.toString() + "р.",
+                                      cart[index].price.toStringAsFixed(2) + "р.",
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                       )
@@ -259,7 +259,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                 FadeAnimation(
                   2.0,
                   Text(
-                    sum.toString() + "р.",
+                    sum.toStringAsFixed(2) + "р.",
                     style: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.bold,

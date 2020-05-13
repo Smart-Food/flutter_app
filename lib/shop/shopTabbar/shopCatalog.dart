@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/products/productList.dart';
+//import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/animation/fadeAnimation.dart';
 import 'package:flutterapp/data.dart';
 import 'package:flutterapp/shop/shopTabbar/shopMenu.dart';
@@ -192,7 +192,7 @@ class _ShopCatalogState extends State<ShopCatalog> {
             ),
           ),
           Center(
-            child: Image.asset(
+            child: Image.network(
               asset,
               fit: BoxFit.contain,
               height: 120,

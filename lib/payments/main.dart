@@ -176,6 +176,6 @@ class HomePageState extends State<Payment> {
           ),
         ),
       ),
-    );;
+    );
   }
 }

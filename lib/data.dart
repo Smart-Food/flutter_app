@@ -6,8 +6,8 @@ var dataList = [
     gradientColor1: Colors.green[900],
     gradientColor2: Colors.green[800],
     gradientColor3: Colors.green[400],
-    imageLogo: "assets/globusLogo.png",
-    imageShop: "assets/globusShop.png",
+    imageLogo: "NRiaT",
+    imageShop: "NBAwq",
     stories: [
       Story(
         "https://clck.ru/N8Wo6",
@@ -58,67 +58,67 @@ var dataList = [
     cardsColumn1: [
       CatalogCard(
           cardName: "Собственное производство",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffF7DFB9,
           cardColor2: 0XffFAF0DA
       ),
       CatalogCard(
           cardName: "Наши марки",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRkGd",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Эксклюзивный алкоголь",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRkMn",
           cardColor1: 0xffF0AEAF,
           cardColor2: 0XffF8C6CA
       ),
       CatalogCard(
           cardName: "Здоровый выбор",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRkPg",
           cardColor1: 0xffFFC498,
           cardColor2: 0XffFDDCC1
       ),
       CatalogCard(
           cardName: "Молочные продукты, сыр, яйца",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRkQZ",
           cardColor1: 0xffF6E475,
           cardColor2: 0XffF9EFB0
       ),
       CatalogCard(
           cardName: "Мясо, рыба, кулинария",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRkRr",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Овощи, фрукты, зелень",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRkYB",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Хлеб, кондитерские изделия",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRkZJ",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Бакалея",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRr6s",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Замороженные продукты",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRr7x",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Напитки",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRr8h",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       )
@@ -126,67 +126,67 @@ var dataList = [
     cardsColumn2: [
       CatalogCard(
           cardName: "Алкоголь",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRkKJ",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Косметика и гигиена",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrAF",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Детские товары",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrB6",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Уборка, бытовая химия",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrCF",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Дом, хобби, техника",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrER",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Товары для животных",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrF2",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Всё для автомобиля и дачи",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrFc",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Канцтовары и печатная продукция",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrGD",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Гардероб и текстиль",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrGm",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Новинки",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrHS",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Всё для сада и огорода",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRrJX",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       )
@@ -197,8 +197,8 @@ var dataList = [
     gradientColor1: Colors.blue[900],
     gradientColor2: Colors.blue[800],
     gradientColor3: Colors.blue[400],
-    imageLogo: "assets/metroLogo.png",
-    imageShop: "assets/metroShop.png",
+    imageLogo: "NRj5V",
+    imageShop: "NBAQv",
     stories: [
       Story(
         "https://www.metro-cc.ru/~/media/RU-Metro/image/catalogs/2020/mm10/tiz/310x160.jpg",
@@ -238,55 +238,55 @@ var dataList = [
     cardsColumn1: [
       CatalogCard(
           cardName: "Продукты",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Электроника и техника",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Автотовары",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Бумага и бумажная продукция",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Всё для ремонта",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Игрушки",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Канцтовары",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Косметика и бытовая химия",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Офисный интерьер",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       )
@@ -294,49 +294,49 @@ var dataList = [
     cardsColumn2: [
       CatalogCard(
           cardName: "Посуда и принадлежности",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Профессиональное оборудование",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Сад и дача",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Спорт и отдых",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Товары для дома",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Бизнес-подарки",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Зоотовары",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Книги и хобби",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       )
@@ -347,8 +347,8 @@ var dataList = [
     gradientColor1: Colors.red[900],
     gradientColor2: Colors.red[800],
     gradientColor3: Colors.red[400],
-    imageLogo: "assets/auschanLogo.png",
-    imageShop: "assets/auschanShop.png",
+    imageLogo: "NRj9D",
+    imageShop: "NRjBq",
     stories: [
       Story(
         "https://www.auchan.ru/pokupki/media/banners19/200420-chitayem_vmeste_290x322-2.jpg",
@@ -385,55 +385,55 @@ var dataList = [
     cardsColumn1: [
       CatalogCard(
           cardName: "Продукты",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Игрушки",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Товары для дома",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Мебель",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Авто",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Бытовая техника",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Электроника",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Спорт и отдых",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Хозтовары",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       )
@@ -441,55 +441,55 @@ var dataList = [
     cardsColumn2: [
       CatalogCard(
           cardName: "Красота и здоровье",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Детям и мамам",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Одежда и обувь",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Всё для праздника",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Дача и сад",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Ремонт",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Багаж",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Зоотовары",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Другое",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       )
@@ -500,8 +500,8 @@ var dataList = [
     gradientColor1: Colors.yellow[900],
     gradientColor2: Colors.yellow[800],
     gradientColor3: Colors.yellow[400],
-    imageLogo: "assets/lentaLogo.png",
-    imageShop: "assets/lentaShop.png",
+    imageLogo: "NRjFw",
+    imageShop: "NRjGz",
     stories: [
       Story(
         "https://lenta.gcdn.co/globalassets/medoviks/okko-208.gif",
@@ -551,85 +551,85 @@ var dataList = [
     cardsColumn1: [
       CatalogCard(
           cardName: "Мясо, птица, колбаса",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Фрукты и овощи",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Кондитерские изделия",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Чай, кофе, какао",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Бакалея",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Замороженная продукция",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Молоко, сыр, яйцо",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Рыба и морепродукты",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Функциональное питание",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Продукция собственного производства",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Безалкагольные напитки",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Алкогольные напитки",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Хлеб и хлебобулочные изделия",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Красота и здоровье",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       )
@@ -637,79 +637,79 @@ var dataList = [
     cardsColumn2: [
       CatalogCard(
           cardName: "Бытовая химия",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Спорт и активный отдых",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Товары для животных",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Лента Зоомаркет - профессиональный уход",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Автотовары",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Бытовая техника и электроника",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Дача, сад",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Товары для детей",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Всё для дома",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Посуда",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Одежда и обувь",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Канцелярия и печатная продукция",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       ),
       CatalogCard(
           cardName: "Текстиль для дома",
-          cardImage: "assets/globusCatalog/globusPng/Собственное производство.png",
+          cardImage: "https://clck.ru/NRjpA",
           cardColor1: 0xffC4D4A3,
           cardColor2: 0XffE0E8CF
       )

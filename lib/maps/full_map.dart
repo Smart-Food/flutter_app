@@ -3,7 +3,6 @@ import 'mapbox_gl.dart';
 import 'package:flutter_mapbox_navigation/flutter_mapbox_navigation.dart';
 import 'page.dart';
 import 'dart:math';
-import 'page.dart';
 import 'package:flutterapp/data.dart';
 import 'package:flutterapp/shop/shop.dart';
 import 'package:flutterapp/login/login.dart';
@@ -53,6 +52,7 @@ class FullMapState extends State<FullMap> {
   bool _arrived = false;
   int _symbolCount = 0;
   MapboxNavigation _directions;
+
   initState(){
     _directions = MapboxNavigation(onRouteProgress: (arrived) async{
       _distanceRemaining = await _directions.distanceRemaining;
@@ -65,6 +65,7 @@ class FullMapState extends State<FullMap> {
   }
   final home = Location(name: 'Home', latitude:57.633720,longitude: 39.862031);
   final magaz = Location(name: 'Magnit',latitude:57.621942,longitude: 39.847892);
+
   void _add(String iconImage) {
     mapController.addSymbol(
       SymbolOptions(

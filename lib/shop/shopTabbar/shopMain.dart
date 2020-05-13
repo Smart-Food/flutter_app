@@ -29,7 +29,7 @@ class _ShopState extends State<ShopMain> {
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.only(bottom: 20),
                 alignment: Alignment.bottomCenter,
-                child: Image.asset(shopPage.imageLogo),
+                child: Image.network("https://clck.ru/" + shopPage.imageLogo),
               )
           ),
           Positioned(
@@ -40,7 +40,7 @@ class _ShopState extends State<ShopMain> {
                   padding: EdgeInsets.only(bottom: 20),
                   alignment: Alignment.bottomCenter,
                   height: 370,
-                  child: Image.asset(shopPage.imageShop)
+                  child: Image.network("https://clck.ru/" + shopPage.imageShop)
               )
           ),
           NotificationListener<ScrollNotification>(

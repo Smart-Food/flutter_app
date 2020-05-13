@@ -85,7 +85,7 @@ class _ShopState extends State<Shop> with TickerProviderStateMixin{
       body: Stack(
         children: <Widget>[
           Menu(context),
-          Dashboard(context),
+          dashboard(context),
         ],
       ),
     );
@@ -188,7 +188,7 @@ class _ShopState extends State<Shop> with TickerProviderStateMixin{
 //  },future: DefaultAssetBundle.of(context).loadString("assets/data.json"),
 //    ));
 
-  Widget Dashboard(context) {
+  Widget dashboard(context) {
     return AnimatedPositioned(
       duration: duration,
       top: 0,

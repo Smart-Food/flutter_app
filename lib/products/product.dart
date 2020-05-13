@@ -3,6 +3,7 @@ import 'package:flutterapp/products/productInfo.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/animation/fadeAnimation.dart';
 
+// ignore: must_be_immutable
 class Product extends StatefulWidget {
   String name,
       brand,
