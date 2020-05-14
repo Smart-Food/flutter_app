@@ -127,9 +127,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                           if (cart[index].num != 0)
                                             {
                                               cart[index].num--;
-                                              cart.forEach((item){
-                                                sum = cart[index].price*cart[index].num;
-                                              });
+                                              sum -= cart[index].price;
                                             }
                                         });
                                       },
@@ -161,9 +159,7 @@ class _ShoppingCartState extends State<ShoppingCart> {
                                       onPressed:() {
                                         setState(() {
                                           cart[index].num++;
-                                          cart.forEach((item){
-                                            sum = cart[index].price*cart[index].num;
-                                          });
+                                          sum += cart[index].price;
                                         });
                                       },
                                     ),

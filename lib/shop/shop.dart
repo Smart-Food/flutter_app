@@ -73,10 +73,7 @@ class _ShopState extends State<Shop> with TickerProviderStateMixin{
 
   @override
   Widget build(BuildContext context) {
-    int totalCount = 0;
-    cart.forEach((item){
-      totalCount = totalCount + item.num;
-    });
+
     Size size = MediaQuery.of(context).size;
     screenHeight = size.height;
     screenWidth = size.width;
@@ -188,7 +185,11 @@ class _ShopState extends State<Shop> with TickerProviderStateMixin{
 //  },future: DefaultAssetBundle.of(context).loadString("assets/data.json"),
 //    ));
 
-  Widget dashboard(context) {
+  Widget Dashboard(context) {
+    int totalCount = 0;
+    cart.forEach((item){
+      totalCount = totalCount + item.num;
+    });
     return AnimatedPositioned(
       duration: duration,
       top: 0,
@@ -278,12 +279,12 @@ class _ShopState extends State<Shop> with TickerProviderStateMixin{
                                           top: 3.0,
                                           right: 7,
                                           child: Center(
-//                                        child: Text('$totalCount',
-//                                          style: TextStyle(
-//                                              color: Colors.white,
-//                                              fontSize: 12.0,
-//                                              fontWeight: FontWeight.w500),
-//                                        ),
+                                        child: Text('$totalCount',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12.0,
+                                              fontWeight: FontWeight.w500),
+                                        ),
                                           )
                                       ),
                                     ],
