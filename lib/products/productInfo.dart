@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutterapp/registration/shoppingCart.dart';
+import 'package:flutterapp/cart/shoppingCart.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/products/product.dart';
 
@@ -24,9 +24,12 @@ class _ProductInfoState extends State<ProductInfo> {
     return Text(stars);
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     int totalCount = 0;
+    double width = MediaQuery.of(context).size.width;
     cart.forEach((item){
       totalCount = totalCount + item.num;
     });
@@ -38,12 +41,14 @@ class _ProductInfoState extends State<ProductInfo> {
           Stack(
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 40.0),
+                height: width * 0.9,
+                width: width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.0),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black26,
+                      color: Colors.white,
                       offset: Offset(0.0, 2.0),
                       blurRadius: 6.0,
                     ),
@@ -55,7 +60,6 @@ class _ProductInfoState extends State<ProductInfo> {
                     borderRadius: BorderRadius.circular(30.0),
                     child: Image(
                       image: NetworkImage(prod.picture),
-                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -128,6 +132,7 @@ class _ProductInfoState extends State<ProductInfo> {
                         fontSize: 35.0,
                         fontWeight: FontWeight.w600,
                         letterSpacing: 1.2,
+                        backgroundColor: Colors.white12,
                       ),
                     ),
                     Row(
@@ -143,6 +148,7 @@ class _ProductInfoState extends State<ProductInfo> {
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20.0,
+                            backgroundColor: Colors.white12,
                           ),
                         ),
                       ],
@@ -189,7 +195,7 @@ class _ProductInfoState extends State<ProductInfo> {
                               children: <Widget>[
                                 Container(
                                   width: 120.0,
-                                  child: Text(
+                                  child: Text( //black26
                                     prod.name,
                                     style: TextStyle(
                                       fontSize: 18.0,
@@ -209,7 +215,7 @@ class _ProductInfoState extends State<ProductInfo> {
                                       ),
                                     ),
                                     Text(
-                                      'за штуку',
+                                      '1 кг',
                                       style: TextStyle(
                                         color: Colors.grey,
                                       ),
@@ -259,6 +265,7 @@ class _ProductInfoState extends State<ProductInfo> {
                         ),
                       ),
                     ),
+                    SizedBox(height: 10.0),
                     Positioned(
                       left: 20.0,
                       top: 15.0,

@@ -29,6 +29,7 @@ class ExistingCardsPageState extends State<ExistingCardsPage> {
 
   payViaExistingCard(BuildContext context, card) async {
     ProgressDialog dialog = new ProgressDialog(context);
+    history += cart;
     cart = [];
     sum = 0;
     dialog.style(

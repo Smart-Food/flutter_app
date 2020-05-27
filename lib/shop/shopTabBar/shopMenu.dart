@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterapp/shop/shopTabbar/shopCatalog.dart';
+import 'package:flutterapp/shop/shopTabBar/shopCatalog.dart';
 import 'package:flutterapp/products/productList.dart';
 
 int catalogPosition = 0;

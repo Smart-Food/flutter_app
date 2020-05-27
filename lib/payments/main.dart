@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'existing-cards.dart';
 import 'payment-service.dart';
+import 'history.dart';
+
 import 'package:progress_dialog/progress_dialog.dart';
 import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/data.dart';
 import 'package:flutterapp/shop/shop.dart';
 import 'package:flutterapp/login/login.dart';
 import 'package:flutterapp/maps/full_map.dart';
+
 
 class Payment extends StatefulWidget {
   Payment({Key key}) : super(key: key);
@@ -26,10 +29,16 @@ class HomePageState extends State<Payment> {
         Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => ExistingCardsPage()
         ));
+        break;
+      case 2:
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => History()
+        ));
     }
   }
 
   payViaNewCard(BuildContext context) async {
+    history += cart;
     cart = [];
     sum = 0;
     ProgressDialog dialog = new ProgressDialog(context);
@@ -80,6 +89,10 @@ class HomePageState extends State<Payment> {
                   icon = Icon(Icons.credit_card, color: Colors.green);
                   text = Text('Оплатить существующей');
                   break;
+                case 2:
+                  icon = Icon(Icons.history, color: Colors.green);
+                  text = Text('История покупок');
+                  break;
               }
 
               return InkWell(
@@ -95,7 +108,7 @@ class HomePageState extends State<Payment> {
             separatorBuilder: (context, index) => Divider(
               color: theme.primaryColor,
             ),
-            itemCount: 2
+            itemCount: 3
         ),
       ),
       bottomNavigationBar: Container(

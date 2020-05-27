@@ -9,6 +9,7 @@ class Products extends StatefulWidget {
 }
 
 List<Product> cart = [];
+List<Product> history = [];
 double sum = 0;
 
 class _ProductsState extends State<Products> {

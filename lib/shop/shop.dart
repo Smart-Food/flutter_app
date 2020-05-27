@@ -1,11 +1,11 @@
 import 'dart:convert';
-import 'package:flutterapp/shop/shopTabbar/shopMenu.dart';
+import 'package:flutterapp/shop/shopTabBar/shopMenu.dart';
 import 'package:flutterapp/data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterapp/products/product.dart';
 import 'package:flutterapp/products/productList.dart';
-import 'package:flutterapp/registration/shoppingCart.dart';
-import 'package:flutterapp/shop/shopTabbar/shopMain.dart';
+import 'package:flutterapp/cart/shoppingCart.dart';
+import 'package:flutterapp/shop/shopTabBar/shopMain.dart';
 import 'package:flutterapp/maps/full_map.dart';
 import 'package:flutterapp/login/login.dart';
 import 'package:flutterapp/payments/main.dart';
@@ -82,7 +82,7 @@ class _ShopState extends State<Shop> with TickerProviderStateMixin{
       body: Stack(
         children: <Widget>[
           Menu(context),
-          dashboard(context),
+          Dashboard(context),
         ],
       ),
     );

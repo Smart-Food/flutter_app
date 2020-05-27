@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 //import 'package:flutterapp/products/productList.dart';
 import 'package:flutterapp/animation/fadeAnimation.dart';
 import 'package:flutterapp/data.dart';
-import 'package:flutterapp/shop/shopTabbar/shopMenu.dart';
+import 'package:flutterapp/shop/shopTabBar/shopMenu.dart';
 import 'package:flutterapp/shop/shop.dart';
 
 void main() => runApp(MyApp());

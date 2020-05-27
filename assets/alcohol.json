@@ -1,38 +1,38 @@
 [
   {
-    "id": 1,
-    "name": "Alcohol 1",
-    "picture": "https://clck.ru/NAdVq",
-    "oldPrice": 85.0,
-    "price": 50.0
+    "id": 6,
+    "name": "Сардельки Глобус",
+    "picture": "https://clck.ru/NKW7t",
+    "oldPrice": 455.0,
+    "price": 359.90
   },
   {
-    "id": 2,
-    "name": "Alcohol 2",
-    "picture": "https://clck.ru/NAdVq",
-    "oldPrice": 55.0,
-    "price": 85.0
+    "id": 7,
+    "name": "Кекс Пасхальный Премиум, 650 г",
+    "picture": "https://clck.ru/NKW8M",
+    "oldPrice": 355.0,
+    "price": 299.99
   },
   {
-    "id": 3,
-    "name": "Alcohol 3",
-    "picture": "https://clck.ru/NAdVq",
-    "oldPrice": 55.0,
-    "price": 85.0
+    "id": 8,
+    "name": "Сосиски Венские Глобус, 1 кг",
+    "picture": "https://clck.ru/NKW8j",
+    "oldPrice": 400.0,
+    "price": 379.90
   },
   {
-    "id": 4,
-    "name": "Alcohol 4",
-    "picture": "https://clck.ru/NAdVq",
-    "oldPrice": 55.0,
-    "price": 85.0
+    "id": 9,
+    "name": "Сок из грейпфрута и апельсина Глобус, 0,3 л",
+    "picture": "https://clck.ru/NKW98",
+    "oldPrice": 300.0,
+    "price": 219.99
   },
   {
-    "id": 5,
-    "name": "Alcohol 5",
-    "picture": "https://clck.ru/NAdVq",
-    "oldPrice": 55.0,
-    "price": 85.0
+    "id": 10,
+    "name": "Форель Мурманская охлажденная, стейк, 1 кг",
+    "picture": "https://clck.ru/NKW9W",
+    "oldPrice": 2000.0,
+    "price": 1119.90
   },
   {
     "id": 6,
