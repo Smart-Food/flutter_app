@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_widget.dart';
+import 'package:flutterapp/payments/qrCode.dart';
 import 'payment-service.dart';
 import 'package:stripe_payment/stripe_payment.dart';
 import 'package:progress_dialog/progress_dialog.dart';
@@ -55,6 +56,10 @@ class ExistingCardsPageState extends State<ExistingCardsPage> {
         )
       ).closed.then((_) {
         Navigator.pop(context);
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => GenerateScreen()),
+        );
       });
   }
 
@@ -62,7 +67,8 @@ class ExistingCardsPageState extends State<ExistingCardsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Choose existing card'),
+        title: Text('Выберите существующую карту'),
+        backgroundColor: Colors.green,
       ),
       body: Container(
         padding: EdgeInsets.all(20),

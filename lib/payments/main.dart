@@ -1,76 +1,13 @@
 import 'package:flutter/material.dart';
-import 'existing-cards.dart';
-import 'payment-service.dart';
-import 'history.dart';
-
-import 'package:progress_dialog/progress_dialog.dart';
-import 'package:flutterapp/products/productList.dart';
-import 'package:flutterapp/data.dart';
-import 'package:flutterapp/shop/shop.dart';
-import 'package:flutterapp/login/login.dart';
-import 'package:flutterapp/maps/full_map.dart';
+import 'home.dart';
 
 
-class Payment extends StatefulWidget {
-  Payment({Key key}) : super(key: key);
-
-  @override
-  HomePageState createState() => HomePageState();
-}
-
-class HomePageState extends State<Payment> {
-
-  onItemPress(BuildContext context, int index) async {
-    switch(index) {
-      case 0:
-        payViaNewCard(context);
-        break;
-      case 1:
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => ExistingCardsPage()
-        ));
-        break;
-      case 2:
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => History()
-        ));
-    }
-  }
-
-  payViaNewCard(BuildContext context) async {
-    history += cart;
-    cart = [];
-    sum = 0;
-    ProgressDialog dialog = new ProgressDialog(context);
-    dialog.style(
-        message: 'Please wait...'
-    );
-    await dialog.show();
-    var response = await StripeService.payWithNewCard(
-        amount: '15000',
-        currency: 'USD'
-    );
-    await dialog.hide();
-    Scaffold.of(context).showSnackBar(
-        SnackBar(
-          content: Text(response.message),
-          duration: new Duration(milliseconds: response.success == true ? 1200 : 3000),
-        )
-    );
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    StripeService.init();
-  }
-
+class Payment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: Text('Оплата'),
         backgroundColor: Colors.green,
       ),
       body: Container(
