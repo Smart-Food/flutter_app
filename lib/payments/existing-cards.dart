@@ -4,6 +4,7 @@ import 'package:flutterapp/payments/qrCode.dart';
 import 'payment-service.dart';
 import 'package:stripe_payment/stripe_payment.dart';
 import 'package:progress_dialog/progress_dialog.dart';
+import 'package:flutterapp/products/productList.dart';
 
 class ExistingCardsPage extends StatefulWidget {
   ExistingCardsPage({Key key}) : super(key: key);
@@ -29,6 +30,9 @@ class ExistingCardsPageState extends State<ExistingCardsPage> {
 
   payViaExistingCard(BuildContext context, card) async {
     ProgressDialog dialog = new ProgressDialog(context);
+    history += cart;
+    cart = [];
+    sum = 0;
     dialog.style(
       message: 'Please wait...'
     );

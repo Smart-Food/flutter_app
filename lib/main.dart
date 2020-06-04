@@ -1,7 +1,8 @@
-import 'package:flutterapp/Animation/FadeAnimation.dart';
-import 'package:flutterapp/menu.dart';
+import 'package:flutterapp/animation/fadeAnimation.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'config.dart';
+import 'onBoarding/onboarding.dart';
 
 void main() => runApp(MyApp());
 
@@ -42,7 +43,7 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
         end: 30.0
     ).animate(_scaleController)..addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.push(context, PageTransition(child: Menu(), type: PageTransitionType.fade));
+        Navigator.push(context, PageTransition(child: Onboarding(), type: PageTransitionType.fade));
       }
     });
   }
@@ -57,7 +58,6 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -70,12 +70,7 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
-                  colors: [
-                    Colors.black.withOpacity(.9),
-                    Colors.black.withOpacity(.6),
-                    Colors.black.withOpacity(.8),
-                    Colors.black.withOpacity(.3),
-                  ]
+                  colors: blackGradient
               )
           ),
           child: Column(
@@ -83,11 +78,11 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               FadeAnimation(1, Text("Добро пожаловать в приложение SmartFood.",
-                style: TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold, height: 1.1),)),
-              SizedBox(height: 30,),
+                style: TextStyle(color: white, fontSize: 40, fontWeight: FontWeight.bold, height: 1.1),)),
+              SizedBox(height: 30),
               FadeAnimation(1.2, Text("Мы поможем вам заказать самые свежие продукты из супермаркетов",
-                style: TextStyle(color: Colors.white.withOpacity(.7), fontSize: 25, fontWeight: FontWeight.w100),)),
-              SizedBox(height: 150,),
+                style: TextStyle(color: white.withOpacity(.7), fontSize: 25, fontWeight: FontWeight.w100),)),
+              SizedBox(height: 150),
               FadeAnimation(1.4, InkWell(
                 onTap: () {
                   setState(() {
@@ -108,15 +103,15 @@ class _HomePageState extends State<MyHomePage> with SingleTickerProviderStateMix
                         child: hide == false ? Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
-                            Text("Найти ближайший магазин", style: TextStyle(color: Colors.white, fontSize: 17),),
-                            Icon(Icons.arrow_forward, color: Colors.white,)
+                            Text("Найти ближайший магазин", style: TextStyle(color: white, fontSize: 17),),
+                            Icon(Icons.arrow_forward, color: white,)
                           ],
                         ) : Container(),
                       ),
                     )
                 ),
               )),
-              SizedBox(height: 60,)
+              SizedBox(height: 60)
             ],
           ),
         ),

@@ -1,13 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutterapp">
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="flutterapp"
         android:icon="@mipmap/ic_launcher">
         <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="API_KEY"/>
+
+            android:name="com.mapbox.token"
+            android:value="pk.eyJ1Ijoia2VsaWJlayIsImEiOiJjazk3OHoxNTQwbTZwM2dwY3kwdHluOHBiIn0.NOgdWJeEHDTEmdV5cteJww"
+            />
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -27,3 +31,5 @@
             android:value="2" />
     </application>
 </manifest>
+    <!-- android:name="com.google.android.geo.AIzaSyDDZ6hMohgpC7l40UCzCUtMFfmIqHAAYXM"
+           android:value="AIzaSyDDZ6hMohgpC7l40UCzCUtMFfmIqHAAYXM"/>-->
