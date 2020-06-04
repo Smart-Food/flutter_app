@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Шпикачки По-чешски Глобус",
+    "picture": "https://clck.ru/NKW4o",
+    "oldPrice": 385.0,
+    "price": 369.90
+  },
+  {
+    "id": 2,
+    "name": "Сосиски Глобус, 1 кг",
+    "picture": "https://clck.ru/NKW6f",
+    "oldPrice": 255.0,
+    "price": 299.90
+  },
+  {
+    "id": 3,
+    "name": "Мясной хлеб По-Баварски Глобус, кусок",
+    "picture": "https://clck.ru/NKW6y",
+    "oldPrice": 255.0,
+    "price": 219.90
+  },
+  {
+    "id": 4,
+    "name": "Сок грейпфрутовый, 0,3 л",
+    "picture": "https://clck.ru/NKW7U",
+    "oldPrice": 255.0,
+    "price": 249.99
+  },
+  {
+    "id": 5,
+    "name": "Колбаски свиные для жарки Глобус, 1 кг",
+    "picture": "https://clck.ru/NKW7k",
+    "oldPrice": 289.90,
+    "price": 259.90
+  },
+  {
+    "id": 6,
+    "name": "Bread 6",
+    "picture": "https://clck.ru/NAdTZ",
+    "oldPrice": 55.0,
+    "price": 85.0
+  },
+  {
+    "id": 7,
+    "name": "Bread 7",
+    "picture": "https://clck.ru/NAdTZ",
+    "oldPrice": 55.0,
+    "price": 85.0
+  },
+  {
+    "id": 8,
+    "name": "Bread 8",
+    "picture": "https://clck.ru/NAdTZ",
+    "oldPrice": 55.0,
+    "price": 85.0
+  },
+  {
+    "id": 9,
+    "name": "Bread 9",
+    "picture": "https://clck.ru/NAdTZ",
+    "oldPrice": 55.0,
+    "price": 85.0
+  },
+  {
+    "id": 10,
+    "name": "Bread 10",
+    "picture": "https://clck.ru/NAdTZ",
+    "oldPrice": 55.0,
+    "price": 85.0
+  }
+]
