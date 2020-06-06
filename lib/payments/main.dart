@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
-
+import 'package:flutterapp/shop/shop.dart';
+import 'package:flutterapp/login/login.dart';
+import 'package:flutterapp/maps/full_map.dart';
 
 class Payment extends StatelessWidget {
   @override
@@ -43,7 +44,7 @@ class Payment extends StatelessWidget {
               );
             },
             separatorBuilder: (context, index) => Divider(
-              color: theme.primaryColor,
+              // color: theme.primaryColor,
             ),
             itemCount: 3
         ),
