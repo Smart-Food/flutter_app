@@ -1,6 +1,7 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_mapbox_navigation/library.dart';
 import 'mapbox_gl.dart';
-import 'package:flutter_mapbox_navigation/flutter_mapbox_navigation.dart';
 import 'page.dart';
 import 'dart:math';
 import 'package:flutterapp/data.dart';
@@ -63,8 +64,8 @@ class FullMapState extends State<FullMap> {
       if(arrived) await _directions.finishNavigation();
     });
   }
-  final home = Location(name: 'Home', latitude:57.633720,longitude: 39.862031);
-  final magaz = Location(name: 'Magnit',latitude:57.621942,longitude: 39.847892);
+  final home = LatLng(57.633720, 39.862031);
+  final magaz = LatLng(57.621942, 39.847892);
 
   void _add(String iconImage) {
     mapController.addSymbol(

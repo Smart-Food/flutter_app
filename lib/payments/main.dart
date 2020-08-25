@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'package:flutterapp/login/login.dart';
+import 'package:flutterapp/maps/full_map.dart';
+import 'package:flutterapp/shop/shop.dart';
+
+import '../data.dart';
 
 
 class Payment extends StatelessWidget {
@@ -34,7 +38,7 @@ class Payment extends StatelessWidget {
 
               return InkWell(
                 onTap: () {
-                  onItemPress(context, index);
+                  //onItemPress(context, index);
                 },
                 child: ListTile(
                   title: text,
@@ -43,7 +47,7 @@ class Payment extends StatelessWidget {
               );
             },
             separatorBuilder: (context, index) => Divider(
-              color: theme.primaryColor,
+              //color: theme.primaryColor,
             ),
             itemCount: 3
         ),
@@ -69,9 +73,9 @@ class Payment extends StatelessWidget {
                       color: navbarIndex == 0 ? Colors.black : Colors.white
                   ),
                   onPressed: () {
-                    setState(() {
-                      navbarIndex = 0;
-                    });
+                    // setState(() {
+                    //   navbarIndex = 0;
+                    // });
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => Shop(logo: 'NBAfH', shop: 'NBAQv', fileName: 'data.json'),
                     ));
@@ -84,9 +88,9 @@ class Payment extends StatelessWidget {
                       color: navbarIndex == 1 ? Colors.black : Colors.white
                   ),
                   onPressed: () {
-                    setState(() {
-                      navbarIndex = 1;
-                    });
+                    // setState(() {
+                    //   navbarIndex = 1;
+                    // });
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => FullMapPage(),
                     ));
@@ -99,9 +103,9 @@ class Payment extends StatelessWidget {
                       color: navbarIndex == 2 ? Colors.black : Colors.white
                   ),
                   onPressed: () {
-                    setState(() {
-                      navbarIndex = 2;
-                    });
+                    // setState(() {
+                    //   navbarIndex = 2;
+                    // });
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => Payment(),
                     ));
@@ -114,9 +118,9 @@ class Payment extends StatelessWidget {
                       color: navbarIndex == 3 ? Colors.black : Colors.white
                   ),
                   onPressed: () {
-                    setState(() {
-                      navbarIndex = 3;
-                    });
+                    // setState(() {
+                    //   navbarIndex = 3;
+                    // });
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => Login(),
                     ));
